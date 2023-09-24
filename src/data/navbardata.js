@@ -39,6 +39,6 @@ export const navbardata = {
       title: "Discussion",
       content: ["Upcoming Talks", "Past Talks", "Social Media"],
     },
-    { title: "AboutUs" },
+    { title: "About" },
   ],
 };
