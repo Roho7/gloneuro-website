@@ -2,7 +2,7 @@ import { News } from "../data/news";
 function LatestNews() {
   return (
     <div className="m-4 p-8 rounded-xl bg-base-100">
-      <h1 className="text-4xl">Latest News</h1>
+      <h1>Latest News</h1>
       {News.map((item, index) => {
         return (
           <div

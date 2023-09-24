@@ -2,7 +2,8 @@ import { navbardata } from "../data/navbardata";
 
 function Navbar() {
   return (
-    <div className="glass w-screen flex justify-between items-center p-4 fixed top-0 z-50">
+    <div className="glass bg-base-100 w-screen flex justify-between items-center p-4 fixed top-0 z-50">
+      <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
       <div className="flex gap-4">
         {navbardata.Navbar.map((item) => {
           return <NavElement title={item.title} content={item.content} />;

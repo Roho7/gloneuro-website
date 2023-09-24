@@ -1,4 +1,5 @@
 import React from "react";
+import LatestBlog from "./LatestBlog";
 
 function Hero() {
   return (
@@ -15,6 +16,7 @@ function Hero() {
           className="object-cover h-full w-full"
         />
       </div>
+      <LatestBlog />
     </div>
   );
 }
