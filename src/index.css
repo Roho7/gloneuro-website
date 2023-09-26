@@ -10,7 +10,8 @@
 }
 
 #root {
-  box-sizing: border-box @apply bg-pale-100 text-base-800;
+  box-sizing: border-box;
+  @apply bg-pale-100 text-base-800 overflow-x-hidden min-h-screen;
 }
 
 h1 {
@@ -19,6 +20,16 @@ h1 {
 
 h2 {
   @apply text-xl;
+}
+span {
+  @apply flex gap-2;
+}
+input {
+  @apply p-2 rounded-md;
+}
+
+button {
+  @apply p-2 rounded-md bg-pale-100 hover:bg-base-50;
 }
 .nav-title {
   @apply cursor-pointer relative text-base-800 font-semibold;
@@ -32,7 +43,11 @@ h2 {
   @apply bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-60;
 }
 
-.hero-img::before {
+.hero-top {
+  @apply relative;
+}
+
+.hero-top::after {
   content: "";
-  @apply absolute h-full w-full top-0 left-0 bg-base-800 opacity-40;
+  @apply absolute h-full w-full top-0 left-0 rounded-2xl bg-base-800 opacity-40 -z-0;
 }

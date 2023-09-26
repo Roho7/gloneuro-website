@@ -1,21 +1,19 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import LatestNews from "./components/LatestNews";
-import ArticleCarousel from "./components/ArticleCarousel";
-import Catagories from "./components/Catagories";
+import { Routes, Route } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Hero />
-      <br />
-      <LatestNews />
-      <br />
-      <ArticleCarousel />
-      <br />
-      <Catagories />
+      <RecoilRoot>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </RecoilRoot>
     </div>
   );
 }

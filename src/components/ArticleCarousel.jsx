@@ -4,7 +4,7 @@ function ArticleCarousel() {
   return (
     <div className="m-4">
       <h1 className="mb-4">Latest Blog</h1>
-      <div className="flex gap-4 overflow-x-scroll">
+      <div className="flex gap-4 overflow-x-scroll p-4">
         {BlogData.map((item) => {
           return (
             <CarouselCard
@@ -21,17 +21,17 @@ function ArticleCarousel() {
 
 const CarouselCard = ({ title, img, author }) => {
   return (
-    <div className="p-4 bg-base-50 w-3/4 rounded-xl">
-      <h2 className="mb-2 whitespace-nowrap text-ellipsis overflow-hidden">
-        {title}
-      </h2>
-      <div className="w-full h-48 ">
+    <div className="p-4 bg-base-50 w-72 h-3/4 rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all ease-linear whitespace-nowrap text-ellipsis overflow-hidden">
+      <div className="h-48">
         <img
           src={img}
           alt=""
-          className=" rounded-xl h-full w-full object-cover"
+          className="mb-4 rounded-xl h-full w-full object-cover"
         />
       </div>
+      <h2 className="whitespace-nowrap text-ellipsis overflow-hidden">
+        {title}
+      </h2>
       <span className="font-light italic text-base-300"> by {author}</span>
     </div>
   );
