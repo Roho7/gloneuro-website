@@ -3,8 +3,9 @@ import Homepage from "./pages/Homepage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { RecoilRoot } from "recoil";
-import WriteBlog from "./pages/WriteBlog";
 import ReadBlogs from "./pages/ReadBlogs";
+import PostBlog from "./pages/PostBlog";
+import PostNews from "./pages/PostNews";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Homepage />} />
-          <Route path="/blogs/write" element={<WriteBlog />} />
+          <Route path="/blogs/write" element={<PostBlog />} />
           <Route path="/blogs/:blogId" element={<ReadBlogs />} />
+          <Route path="/news/post" element={<PostNews />} />
         </Routes>
       </RecoilRoot>
     </div>

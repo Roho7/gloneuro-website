@@ -1,5 +1,6 @@
 export const News = [
   {
+    eventDate: "25th October 2023",
     date: "26th October 2001",
     img: "https://images.pexels.com/photos/4226119/pexels-photo-4226119.jpeg?auto=compress&cs=tinysrgb&w=800",
     heading: "This is a new event",

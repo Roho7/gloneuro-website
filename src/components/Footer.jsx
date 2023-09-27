@@ -16,7 +16,7 @@ function Footer() {
         <button onClick={() => navigate("/blogs/write")}>Add Blog</button>
       )}
       <button onClick={handleSignOut}>Sign Out</button>
-      <button>Add News</button>
+      <button onClick={() => navigate("/news/post")}>Add News</button>
     </div>
   );
 }

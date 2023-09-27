@@ -2,7 +2,7 @@ import { useState } from "react";
 import { db } from "../server/firebase";
 import { Timestamp, doc, setDoc } from "firebase/firestore";
 
-function WriteBlog() {
+function PostBlog() {
   const [blogData, setBlogData] = useState({
     title: "",
     author: "",
@@ -86,4 +86,4 @@ function WriteBlog() {
   );
 }
 
-export default WriteBlog;
+export default PostBlog;
