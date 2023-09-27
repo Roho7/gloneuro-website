@@ -8,6 +8,8 @@ function WriteBlog() {
     author: "",
     content: "",
     img: "",
+    cat1: "",
+    cat2: "",
   });
   const handleChange = (e) => {
     setBlogData({ ...blogData, [e.target.name]: e.target.value });
@@ -21,6 +23,8 @@ function WriteBlog() {
         content: blogData.content,
         img: blogData.img,
         date: Timestamp.fromDate(new Date(date)),
+        cat1: blogData.cat1,
+        cat2: blogData.cat2,
       });
       console.log("succesfull");
     } catch (err) {
@@ -52,6 +56,22 @@ function WriteBlog() {
           onChange={handleChange}
           placeholder="Enter author name"
         />
+        <div className="flex gap-2">
+          <input
+            type="text"
+            name="cat1"
+            id="cat1"
+            onChange={handleChange}
+            placeholder="Enter first category"
+          />
+          <input
+            type="text"
+            name="cat2"
+            id="cat2"
+            onChange={handleChange}
+            placeholder="Enter second category"
+          />
+        </div>
         <textarea
           rows={5}
           cols="40"

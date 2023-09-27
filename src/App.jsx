@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { RecoilRoot } from "recoil";
 import WriteBlog from "./pages/WriteBlog";
+import ReadBlogs from "./pages/ReadBlogs";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Homepage />} />
           <Route path="/blogs/write" element={<WriteBlog />} />
+          <Route path="/blogs/:blogId" element={<ReadBlogs />} />
         </Routes>
       </RecoilRoot>
     </div>
