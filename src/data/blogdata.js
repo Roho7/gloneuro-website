@@ -3,6 +3,8 @@ export const BlogData = [
     title: "The Brain and its Marvels",
     img: "https://images.pexels.com/photos/954585/pexels-photo-954585.jpeg?auto=compress&cs=tinysrgb&w=800",
     author: "Dr. Sarah Neurologist",
+    content: "ahfiaoenfoa",
+    date: "10/10/2023",
   },
   {
     title: "Understanding Neuroplasticity",

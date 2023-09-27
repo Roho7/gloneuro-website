@@ -1,6 +1,11 @@
+import { useRecoilValue } from "recoil";
 import { navbardata } from "../data/navbardata";
+import { CurrentUser } from "../config/atoms";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const user = useRecoilValue(CurrentUser);
+  const navigate = useNavigate();
   return (
     <div className="glass bg-base-100 w-screen flex justify-between items-center p-4 fixed top-0 z-50">
       <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
@@ -9,6 +14,7 @@ function Navbar() {
           return <NavElement title={item.title} content={item.content} />;
         })}
       </div>
+      {user != "" && user && <span>{user?.email}</span>}
       <input
         type="text"
         placeholder="search"

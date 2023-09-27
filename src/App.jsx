@@ -3,15 +3,17 @@ import Homepage from "./pages/Homepage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { RecoilRoot } from "recoil";
+import WriteBlog from "./pages/WriteBlog";
 
 function App() {
   return (
     <div>
       <RecoilRoot>
         <Routes>
-          <Route path="/" element={<Homepage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/blogs/write" element={<WriteBlog />} />
         </Routes>
       </RecoilRoot>
     </div>
