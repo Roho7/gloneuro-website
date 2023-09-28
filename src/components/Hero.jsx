@@ -43,8 +43,14 @@ const HeroBanner = () => {
 };
 
 const HeroDiscover = () => {
+  const handleCategoryScroll = () => {
+    document.querySelector("#categories").scrollIntoView();
+  };
   return (
-    <div className="w-full h-full p-4 rounded-2xl bg-widget-img bg-[size:100%] hover:bg-[size:110%] transition-all ease-linear">
+    <div
+      className="w-full h-full p-4 rounded-2xl bg-widget-img bg-[size:100%] hover:bg-[size:110%] transition-all ease-linear"
+      onClick={handleCategoryScroll}
+    >
       <p className="text-4xl text-base-100">See all Categories</p>
     </div>
   );

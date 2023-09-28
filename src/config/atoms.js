@@ -13,3 +13,17 @@ export const searchCatagory = atom({
     catagory: "",
   },
 });
+
+export const activeBlog = atom({
+  key: "ActiveBlog",
+  default: {
+    id: "",
+    title: "",
+    author: "",
+    date: "",
+    img: "",
+    content: "",
+    cat1: "",
+    cat2: "",
+  },
+});

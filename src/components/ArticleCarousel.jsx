@@ -2,6 +2,9 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../server/firebase";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { activeBlog } from "../config/atoms";
 
 function ArticleCarousel() {
   const [blogData, setBlogData] = useState([]);
@@ -17,28 +20,45 @@ function ArticleCarousel() {
     };
     getBlogs();
   }, []);
+
+  console.log(blogData);
   return (
     <div className="m-4">
       <h1 className="mb-4">Latest Blog</h1>
-      <div className="flex gap-4 overflow-x-scroll p-4">
-        {blogData.map((item, index) => {
-          return (
-            <CarouselCard
-              key={index}
-              title={item.title}
-              img={item.img}
-              author={item.author}
-            />
-          );
-        })}
+      <div className="overflow-x-scroll">
+        <div className="flex gap-4 min-w-max overflow-x-scroll p-4">
+          {blogData.map((item, index) => {
+            return (
+              <CarouselCard
+                key={index}
+                title={item.title}
+                img={item.img}
+                author={item.author}
+                id={item.id}
+                content={item.content}
+                cat1={item.cat1}
+                cat2={item.cat2}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
 }
 
-const CarouselCard = ({ title, img, author }) => {
+const CarouselCard = ({ title, img, author, id, cat1, cat2, content }) => {
+  const setActiveBlog = useSetRecoilState(activeBlog);
+  const navigate = useNavigate();
+  const handleBlogClick = (id) => {
+    navigate(`/blogs/:${id}`);
+    setActiveBlog({ id, title, img, author, cat1, cat2, content });
+  };
   return (
-    <div className="p-4 bg-base-50 w-72 h-3/4 rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all ease-linear whitespace-nowrap text-ellipsis overflow-hidden">
+    <div
+      onClick={() => handleBlogClick(id)}
+      className="p-4 bg-base-50 w-80 h-3/4 rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all ease-linear whitespace-nowrap text-ellipsis overflow-hidden"
+    >
       <div className="h-48">
         <img
           src={img}
