@@ -10,8 +10,10 @@ function Navbar() {
     <div className="glass bg-base-100 w-screen flex justify-between items-center p-4 fixed top-0 z-50">
       <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
       <div className="flex gap-4">
-        {navbardata.Navbar.map((item) => {
-          return <NavElement title={item.title} content={item.content} />;
+        {navbardata.Navbar.map((item, index) => {
+          return (
+            <NavElement title={item.title} content={item.content} key={index} />
+          );
         })}
       </div>
       {user != "" && user && <span>{user?.email}</span>}
@@ -31,8 +33,12 @@ const NavElement = ({ title, content }) => (
         content != undefined ? "nav-tooltip group-hover:scale-100" : ""
       }
     >
-      {content?.map((item) => {
-        return <p className="hover:text-base-800">{item}</p>;
+      {content?.map((item, index) => {
+        return (
+          <p className="hover:text-base-800" key={index}>
+            {item}
+          </p>
+        );
       })}
     </div>
   </div>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { db } from "../server/firebase";
 import { Timestamp, doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { navbardata } from "../data/navbardata";
 
 function PostBlog() {
   const [blogData, setBlogData] = useState({
@@ -11,6 +13,7 @@ function PostBlog() {
     cat1: "",
     cat2: "",
   });
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setBlogData({ ...blogData, [e.target.name]: e.target.value });
   };
@@ -26,7 +29,8 @@ function PostBlog() {
         cat1: blogData.cat1,
         cat2: blogData.cat2,
       });
-      console.log("succesfull");
+      alert("Blog posted succesfully");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
@@ -57,20 +61,31 @@ function PostBlog() {
           placeholder="Enter author name"
         />
         <div className="flex gap-2">
-          <input
-            type="text"
-            name="cat1"
-            id="cat1"
-            onChange={handleChange}
-            placeholder="Enter first category"
-          />
-          <input
-            type="text"
-            name="cat2"
-            id="cat2"
-            onChange={handleChange}
-            placeholder="Enter second category"
-          />
+          <div className="flex flex-col">
+            <label htmlFor="cat1">Select First Category</label>
+            <select name="cat1" id="cat1" onChange={handleChange}>
+              {navbardata.Navbar[1].content.map((item) => {
+                return (
+                  <option value={item} key={item}>
+                    {item}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="cat2">Select Second Category</label>
+
+            <select name="cat2" id="cat2" onChange={handleChange}>
+              {navbardata.Navbar[1].content.map((item) => {
+                return (
+                  <option value={item} key={item}>
+                    {item}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
         </div>
         <textarea
           rows={5}

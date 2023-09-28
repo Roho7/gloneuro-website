@@ -6,3 +6,10 @@ export const CurrentUser = atom({
     user: "",
   },
 });
+
+export const searchCatagory = atom({
+  key: "SearchCatagory",
+  default: {
+    catagory: "",
+  },
+});

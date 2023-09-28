@@ -11,7 +11,7 @@ function Footer() {
     signOut(auth);
   };
   return (
-    <div className="w-screen h-48 bg-base-800 ">
+    <div className="w-screen h-48 bg-base-800 p-8 flex flex-col gap-4">
       {user && user != "" && (
         <button onClick={() => navigate("/blogs/write")}>Add Blog</button>
       )}
