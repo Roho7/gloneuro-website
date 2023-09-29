@@ -7,7 +7,7 @@ function Navbar() {
   const user = useRecoilValue(CurrentUser);
   const navigate = useNavigate();
   return (
-    <div className="glass bg-base-100 w-screen flex justify-between items-center p-4 fixed top-0 z-50">
+    <header className="glass bg-base-100 w-screen flex justify-between items-center p-4 sticky top-0 z-50">
       <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
       <div className="flex gap-4">
         {navbardata.Navbar.map((item, index) => {
@@ -22,7 +22,7 @@ function Navbar() {
         placeholder="search"
         className="border rounded-3xl py-2 px-4"
       />
-    </div>
+    </header>
   );
 }
 const NavElement = ({ title, content }) => (

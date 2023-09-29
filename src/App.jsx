@@ -6,11 +6,13 @@ import { RecoilRoot } from "recoil";
 import ReadBlogs from "./pages/ReadBlogs";
 import PostBlog from "./pages/PostBlog";
 import PostNews from "./pages/PostNews";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div>
       <RecoilRoot>
+        <Navbar />
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />

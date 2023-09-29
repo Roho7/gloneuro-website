@@ -1,10 +1,9 @@
 // import { BlogData } from "../data/blogdata";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, getDoc, doc } from "firebase/firestore";
 import { db } from "../server/firebase";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSetRecoilState } from "recoil";
-import { activeBlog } from "../config/atoms";
+import Cookies from "universal-cookie";
 
 function ArticleCarousel() {
   const [blogData, setBlogData] = useState([]);
@@ -48,11 +47,15 @@ function ArticleCarousel() {
 }
 
 const CarouselCard = ({ title, img, author, id, cat1, cat2, content }) => {
-  const setActiveBlog = useSetRecoilState(activeBlog);
   const navigate = useNavigate();
-  const handleBlogClick = (id) => {
+  const cookie = new Cookies(null, { path: "/" });
+
+  const handleBlogClick = async (id) => {
+    cookie.remove("activeBlog");
+    const blogRef = doc(db, "Blogs", id);
+    const data = await getDoc(blogRef);
+    cookie.set("activeBlog", data.data());
     navigate(`/blogs/:${id}`);
-    setActiveBlog({ id, title, img, author, cat1, cat2, content });
   };
   return (
     <div

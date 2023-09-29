@@ -11,7 +11,7 @@
 
 #root {
   box-sizing: border-box;
-  @apply bg-pale-100 text-base-800 overflow-x-hidden min-h-screen;
+  @apply bg-pale-100 text-base-800 min-h-screen;
 }
 
 h1 {
@@ -50,4 +50,8 @@ button {
 .hero-top::after {
   content: "";
   @apply absolute h-full w-full top-0 left-0 rounded-2xl bg-base-800 opacity-40 -z-0;
+}
+
+.tag {
+  @apply m-2 p-2 border text-base-300 text-sm border-base-300 bg-base-100 max-w-max rounded-xl;
 }

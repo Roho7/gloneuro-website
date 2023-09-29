@@ -5,7 +5,7 @@ import { ArrowRight, ArrowUpRight, Bookmark } from "react-feather";
 
 function Hero() {
   return (
-    <div className="relative m-4 mt-20 h-screen grid grid-flow-row-dense grid-cols-3 grid-rows-3 gap-4">
+    <div className="relative m-4 h-screen grid grid-flow-row-dense grid-cols-3 grid-rows-3 gap-4">
       <HeroTop />
       <div className="flex flex-col row-span-3 gap-4">
         <LatestBlog />

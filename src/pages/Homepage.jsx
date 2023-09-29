@@ -9,7 +9,6 @@ function Homepage() {
   return (
     <div>
       <div>
-        <Navbar />
         <Hero />
         <br />
         <LatestNews />
