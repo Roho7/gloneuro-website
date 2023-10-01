@@ -14,16 +14,7 @@ export const searchCatagory = atom({
   },
 });
 
-export const activeBlog = atom({
-  key: "ActiveBlog",
-  default: {
-    id: "",
-    title: "",
-    author: "",
-    date: "",
-    img: "",
-    content: "",
-    cat1: "",
-    cat2: "",
-  },
+export const Loading = atom({
+  key: "Loading",
+  default: { isLoading: false },
 });

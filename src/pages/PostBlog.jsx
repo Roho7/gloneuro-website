@@ -95,6 +95,7 @@ function PostBlog() {
           placeholder="Paste blog here"
           className="p-4 rounded-md"
         ></textarea>
+
         <button onClick={handleSubmit}>Post Blog</button>
       </div>
     </div>
