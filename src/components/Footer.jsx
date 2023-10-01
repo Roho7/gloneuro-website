@@ -9,6 +9,7 @@ function Footer() {
   const navigate = useNavigate();
   const handleSignOut = () => {
     signOut(auth);
+    location.reload();
   };
   return (
     <div className="w-screen h-48 bg-base-800 p-8 flex flex-col gap-4">

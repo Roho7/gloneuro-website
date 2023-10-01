@@ -1,11 +1,22 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { navbardata } from "../data/navbardata";
 import { CurrentUser } from "../config/atoms";
 import { useNavigate } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useState } from "react";
 
 function Navbar() {
-  const user = useRecoilValue(CurrentUser);
+  const [user, setUser] = useState();
   const navigate = useNavigate();
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const userEmail = user.email;
+      setUser(userEmail);
+    } else {
+    }
+  });
   return (
     <header className="glass bg-base-100 w-screen flex justify-between items-center p-4 sticky top-0 z-50">
       <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
@@ -16,7 +27,7 @@ function Navbar() {
           );
         })}
       </div>
-      {user != "" && user && <span>{user?.email}</span>}
+      {user && <span>{user}</span>}
       <input
         type="text"
         placeholder="search"

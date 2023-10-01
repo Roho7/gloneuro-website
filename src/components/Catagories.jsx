@@ -18,7 +18,7 @@ function Catagories() {
         {navbardata.Navbar[1].content.map((item, index) => {
           return (
             <button
-              className="p-2 border border-base-300 rounded-xl hover:bg-base-50 cursor-pointer"
+              className="p-2 border border-base-300 rounded-xl hover:bg-grass-100 cursor-pointer"
               onClick={() => handleCatagoryClick(item)}
               key={index}
             >

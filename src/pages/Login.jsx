@@ -6,15 +6,14 @@ import { CurrentUser } from "../config/atoms";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const setCurrentUser = useSetRecoilState(CurrentUser);
   const [userData, setUserData] = useState({
     email: "",
     password: "",
   });
   const navigate = useNavigate();
+  // const cookie = Cookies(null, { path: "/" });
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
-    console.log(userData);
   };
 
   const handleSubmit = (e) => {
@@ -27,18 +26,15 @@ function Login() {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            setCurrentUser(user);
             console.log(user);
             if (user.uid) {
               navigate("/");
             } else {
               alert("Invalid User");
             }
-            // ...
           })
           .catch((error) => {
             console.log(error);
-            // ..
           });
       } catch (err) {
         console.log(err);
