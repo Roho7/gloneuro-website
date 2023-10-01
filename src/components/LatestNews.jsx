@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { News } from "../data/news";
 function LatestNews() {
   return (
@@ -5,9 +6,12 @@ function LatestNews() {
       <h1>Latest News</h1>
       {News.map((item, index) => {
         return (
-          <div
+          <motion.div
             key={index}
             className="flex w-full justify-between my-4 py-4 border-y border-base-300"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
           >
             <span>{item.date}</span>
             <div className="w-1/4 h-40 rounded-xl overflow-hidden">
@@ -17,7 +21,7 @@ function LatestNews() {
               <h1 className="text-2xl">{item.heading}</h1>
               <span className="">{item.description}</span>
             </div>
-          </div>
+          </motion.div>
         );
       })}
     </div>

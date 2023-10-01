@@ -2,6 +2,7 @@ import { useSetRecoilState } from "recoil";
 import { navbardata } from "../data/navbardata";
 import { searchCatagory } from "../config/atoms";
 import SearchBlogs from "./SearchBlogs";
+import { motion } from "framer-motion";
 
 function Catagories() {
   const setSearchCatagory = useSetRecoilState(searchCatagory);
@@ -9,7 +10,12 @@ function Catagories() {
     setSearchCatagory(item);
   };
   return (
-    <div className="m-4 p-8 rounded-xl bg-base-100">
+    <motion.div
+      className="m-4 p-8 rounded-xl bg-base-100"
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
       <h1 className="mb-2" id="categories">
         Categories
       </h1>
@@ -28,7 +34,7 @@ function Catagories() {
         })}
       </div>
       <SearchBlogs />
-    </div>
+    </motion.div>
   );
 }
 
