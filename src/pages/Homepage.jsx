@@ -4,12 +4,15 @@ import LatestNews from "../components/LatestNews";
 import ArticleCarousel from "../components/ArticleCarousel";
 import Catagories from "../components/Catagories";
 import Footer from "../components/Footer";
+import QuoteComponent from "../components/QuoteComponent";
 
 function Homepage() {
   return (
     <div>
       <div>
         <Hero />
+        <br />
+        <QuoteComponent />
         <br />
         <LatestNews />
         <br />

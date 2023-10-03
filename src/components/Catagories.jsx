@@ -12,9 +12,9 @@ function Catagories() {
   return (
     <motion.div
       className="m-4 p-8 rounded-xl bg-base-100"
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1, type: "spring" }}
     >
       <h1 className="mb-2" id="categories">
         Categories

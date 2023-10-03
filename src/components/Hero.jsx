@@ -24,7 +24,7 @@ const HeroTop = () => {
       className="hero-top p-4 w-full bg-hero-img bg-cover text-base-50 col-span-2 row-span-2 rounded-2xl"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, type: "spring" }}
     >
       <div className="mb-4 relative z-10">
         <h1 className="text-8xl ">GloNeuro</h1>
@@ -42,7 +42,7 @@ const HeroBanner = () => {
       className="p-4 bg-grass-100 col-span-2 rounded-2xl flex flex-col gap-2 justify-center"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
+      transition={{ duration: 0.5, delay: 0.3, type: "spring" }}
     >
       <Bookmark />
       <h1>Discover 100+ Neuroscience Articles</h1>
@@ -63,7 +63,7 @@ const HeroDiscover = () => {
       onClick={handleCategoryScroll}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.5, type: "spring" }}
     >
       <p className="text-4xl text-base-100">See all Categories</p>
     </motion.div>

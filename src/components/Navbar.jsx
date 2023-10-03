@@ -1,6 +1,4 @@
-import { useRecoilValue, useSetRecoilState } from "recoil";
 import { navbardata } from "../data/navbardata";
-import { CurrentUser } from "../config/atoms";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
@@ -18,7 +16,7 @@ function Navbar() {
     }
   });
   return (
-    <header className="glass bg-base-100 w-screen flex justify-between items-center p-4 sticky top-0 z-50">
+    <header className="glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50">
       <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
       <div className="flex gap-4">
         {navbardata.Navbar.map((item, index) => {
@@ -28,11 +26,11 @@ function Navbar() {
         })}
       </div>
       {user && <span>{user}</span>}
-      <input
+      {/* <input
         type="text"
         placeholder="search"
         className="border rounded-3xl py-2 px-4"
-      />
+      /> */}
     </header>
   );
 }

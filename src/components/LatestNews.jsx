@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, spring } from "framer-motion";
 import { News } from "../data/news";
 function LatestNews() {
   return (
@@ -9,9 +9,9 @@ function LatestNews() {
           <motion.div
             key={index}
             className="flex w-full justify-between my-4 py-4 border-y border-base-300"
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1, type: "spring" }}
           >
             <span>{item.date}</span>
             <div className="w-1/4 h-40 rounded-xl overflow-hidden">
