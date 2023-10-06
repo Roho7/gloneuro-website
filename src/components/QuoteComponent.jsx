@@ -3,8 +3,8 @@ import { Italic } from "react-feather";
 
 function QuoteComponent() {
   return (
-    <div className="mx-32 bg-salmon-100 p-8 rounded-xl relative z-0 overflow-clip shadow-xl">
-      <p className="mb-2 font-light italic text-3xl">
+    <div className="m-4 lg:mx-32 bg-salmon-100 p-8 rounded-xl relative z-0 overflow-clip shadow-xl">
+      <p className="mb-2 font-light italic text-xl lg:text-3xl">
         "If the human brain were so simple that we could understand it, we would
         be so simple that we couldn't."
       </p>

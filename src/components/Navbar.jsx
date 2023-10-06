@@ -16,7 +16,7 @@ function Navbar() {
     }
   });
   return (
-    <header className="glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50">
+    <header className=" max-sm:hidden glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50">
       <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
       <div className="flex gap-4">
         {navbardata.Navbar.map((item, index) => {

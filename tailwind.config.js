@@ -11,6 +11,9 @@ export default {
           100: "#F8DADA",
           200: "#e6bcbc",
         },
+        screens: {
+          mm: { max: "639px" },
+        },
         base: {
           50: "#F7F7F7",
           100: "#E9E8EE",

@@ -15,7 +15,7 @@
 }
 
 h1 {
-  @apply text-2xl lg:text-4xl font-bold;
+  @apply text-2xl font-bold;
 }
 
 h2 {
@@ -57,9 +57,9 @@ button {
 }
 
 .stats-box {
-  @apply relative p-4 w-full h-72 text-xl flex flex-col items-center justify-center overflow-clip rounded-xl shadow-xl;
+  @apply relative p-4 w-full h-32 lg:h-72 text-xl flex flex-col items-center justify-center overflow-clip rounded-xl shadow-xl;
 }
 
 .stats-icon {
-  @apply h-full w-full absolute opacity-10 -left-20 top-10;
+  @apply h-48 w-48 lg:h-full lg:w-full absolute opacity-10 top-0 -left-5 lg:-left-20 lg:top-10;
 }
