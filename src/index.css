@@ -15,7 +15,7 @@
 }
 
 h1 {
-  @apply text-4xl;
+  @apply text-2xl lg:text-4xl font-bold;
 }
 
 h2 {
@@ -53,5 +53,13 @@ button {
 }
 
 .tag {
-  @apply m-2 p-2 border text-base-300 text-sm border-base-300 bg-base-100 max-w-max rounded-xl;
+  @apply m-2 p-2 border text-salmon-200 text-sm border-salmon-200 bg-salmon-100 max-w-max rounded-xl;
+}
+
+.stats-box {
+  @apply relative p-4 w-full h-72 text-xl flex flex-col items-center justify-center overflow-clip rounded-xl shadow-xl;
+}
+
+.stats-icon {
+  @apply h-full w-full absolute opacity-10 -left-20 top-10;
 }

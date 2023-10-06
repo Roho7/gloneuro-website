@@ -6,24 +6,36 @@ import Loader from "../components/Loader";
 function ReadBlogs() {
   const cookie = new Cookies();
   const activeBlog = cookie.get("activeBlog");
-  console.log(activeBlog);
+  const blogDate = new Date(activeBlog.date.seconds * 1000).toDateString();
   const loading = useRecoilValue(Loading);
   if (loading.isLoading) {
     return <Loader />;
   } else {
     return (
       <div className="p-4 w-screen">
-        <div className="w-full h-[30vh] mb-4 ">
-          <img
-            src={activeBlog.img}
-            alt=""
-            className="w-full h-full object-cover rounded-xl"
-          />
+        <div
+          className="relative w-full lg:h-[40vh] mb-4 p-4 flex flex-col justify-between rounded-xl"
+          style={{
+            backgroundImage: `url(${activeBlog.img})`,
+            objectFit: "cover",
+            backgroundSize: "150%",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="z-10">
+            <div className="flex">
+              {activeBlog.cat1 && <p className="tag"> {activeBlog.cat1} </p>}
+              {activeBlog.cat2 && <p className="tag"> {activeBlog.cat2} </p>}
+            </div>
+            <h1 className="text-5xl lg:text-8xl text-base-50">
+              {activeBlog.title}
+            </h1>
+          </div>
+          <div className="absolute top-0 left-0 h-full w-full bg-base-800 opacity-20 rounded-xl"></div>
         </div>
-        {activeBlog.cat1 && <p className="tag"> {activeBlog.cat1} </p>}
-        {activeBlog.cat2 && <p className="tag"> {activeBlog.cat2} </p>}
-        <h1 className="text-8xl text-base-300">{activeBlog.title}</h1>
         <p className="text-base-300 italic"> by {activeBlog.author} </p>
+        <p className="text-base-300 italic"> {blogDate} </p>
         <div className="my-4 p-4 rounded-xl bg-base-100">
           <p> {activeBlog.content} </p>
         </div>

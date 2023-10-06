@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { searchCatagory } from "../config/atoms";
 import BlogCard from "./BlogCard";
+import { motion } from "framer-motion";
 
 function SearchBlogs() {
   const [blogData, setBlogData] = useState([]);

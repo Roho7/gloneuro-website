@@ -5,6 +5,7 @@ import ArticleCarousel from "../components/ArticleCarousel";
 import Catagories from "../components/Catagories";
 import Footer from "../components/Footer";
 import QuoteComponent from "../components/QuoteComponent";
+import StatsSection from "../components/StatsSection";
 
 function Homepage() {
   return (
@@ -19,6 +20,8 @@ function Homepage() {
         <ArticleCarousel />
         <br />
         <Catagories />
+        <br />
+        <StatsSection />
         <br />
         <Footer />
       </div>

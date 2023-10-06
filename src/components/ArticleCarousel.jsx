@@ -3,6 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../server/firebase";
 import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
+import { ChevronRight } from "react-feather";
 
 function ArticleCarousel() {
   const [blogData, setBlogData] = useState([]);
@@ -24,8 +25,10 @@ function ArticleCarousel() {
   };
 
   return (
-    <div className="m-4">
-      <h1 className="mb-4">Latest Blog</h1>
+    <div className="m-4 p-4 bg-base-800 rounded-xl">
+      <h1 className="mb-4 text-base-50 flex items-center gap-4">
+        Latest Blogs <ChevronRight />
+      </h1>
       <div className="overflow-x-scroll">
         <div className="flex gap-4 min-w-max overflow-x-scroll p-4">
           {blogData
