@@ -57,9 +57,13 @@ button {
 }
 
 .stats-box {
-  @apply relative p-4 w-full h-32 lg:h-72 text-xl flex flex-col items-center justify-center overflow-clip rounded-xl shadow-xl;
+  @apply relative p-4 w-full h-32 lg:h-72 text-xl flex flex-col items-center justify-center overflow-clip;
 }
 
 .stats-icon {
   @apply h-48 w-48 lg:h-full lg:w-full absolute opacity-10 top-0 -left-5 lg:-left-20 lg:top-10;
+}
+
+.stats-header {
+  @apply text-3xl;
 }
