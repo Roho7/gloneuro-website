@@ -11,7 +11,7 @@
 
 #root {
   box-sizing: border-box;
-  @apply bg-pale-100 text-base-800 min-h-screen;
+  @apply bg-base-800 text-base-800 min-h-screen;
 }
 
 h1 {
@@ -32,7 +32,7 @@ button {
   @apply p-2 rounded-md bg-pale-100 hover:bg-base-50;
 }
 .nav-title {
-  @apply cursor-pointer relative text-base-800 font-semibold;
+  @apply cursor-pointer relative text-white hover:text-base-50 font-semibold;
 }
 
 .nav-tooltip {

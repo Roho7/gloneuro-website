@@ -11,7 +11,7 @@ function Catagories() {
   };
   return (
     <motion.div
-      className="m-4 p-8 rounded-xl bg-base-100"
+      className="m-4 p-8 rounded-xl bg-base-500 text-base-50"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, type: "spring" }}
@@ -24,7 +24,7 @@ function Catagories() {
         {navbardata.Navbar[1].content.map((item, index) => {
           return (
             <button
-              className="p-2 border border-base-300 rounded-xl hover:bg-grass-100 cursor-pointer"
+              className="p-2 border border-base-300 rounded-xl bg-base-500 hover:bg-base-300 cursor-pointer"
               onClick={() => handleCatagoryClick(item)}
               key={index}
             >

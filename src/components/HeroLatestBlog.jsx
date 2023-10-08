@@ -4,7 +4,7 @@ import { ArrowUpRight } from "react-feather";
 function LatestBlog() {
   return (
     <motion.div
-      className="glass group p-4 bg-base-50 rounded-xl object-cover cursor-pointer"
+      className="group p-4 bg-base-500 text-base-100 rounded-xl object-cover cursor-pointer"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2, type: "spring" }}

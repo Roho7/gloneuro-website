@@ -18,7 +18,7 @@ function Navbar() {
   return (
     <header className=" max-sm:hidden glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50">
       <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
-      <div className="flex gap-4">
+      <div className="flex gap-4 ">
         {navbardata.Navbar.map((item, index) => {
           return (
             <NavElement title={item.title} content={item.content} key={index} />
@@ -44,7 +44,7 @@ const NavElement = ({ title, content }) => (
     >
       {content?.map((item, index) => {
         return (
-          <p className="hover:text-base-800" key={index}>
+          <p className="hover:text-base-100" key={index}>
             {item}
           </p>
         );

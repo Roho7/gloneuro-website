@@ -12,7 +12,7 @@ function Footer() {
     location.reload();
   };
   return (
-    <div className="w-full h-48 bg-base-800 p-8 flex flex-col gap-4">
+    <div className="w-full h-48 bg-base-500 p-8 flex flex-col gap-4">
       {user && user != "" && (
         <button onClick={() => navigate("/blogs/write")}>Add Blog</button>
       )}

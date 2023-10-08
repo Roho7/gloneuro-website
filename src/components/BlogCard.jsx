@@ -33,7 +33,7 @@ const BlogCard = ({ title, img, author, id }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 100 }}
         transition={{ duration: 1 }}
-        className="p-4 bg-base-50 w-80 h-3/4 rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all ease-linear whitespace-nowrap text-ellipsis overflow-hidden"
+        className="p-4 bg-base-300 w-80 h-3/4 rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all ease-linear whitespace-nowrap text-ellipsis overflow-hidden"
       >
         <div className="h-48 mb-4">
           <img
@@ -42,10 +42,10 @@ const BlogCard = ({ title, img, author, id }) => {
             className=" rounded-xl h-full w-full object-cover"
           />
         </div>
-        <h2 className="whitespace-nowrap text-ellipsis overflow-hidden">
+        <h2 className="whitespace-nowrap text-ellipsis overflow-hidden text-white font-bold">
           {title}
         </h2>
-        <span className="font-light italic text-base-300"> by {author}</span>
+        <span className="font-light italic text-base-50"> by {author}</span>
       </motion.div>
     );
   }

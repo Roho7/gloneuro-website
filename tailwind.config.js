@@ -8,23 +8,33 @@ export default {
     extend: {
       colors: {
         salmon: {
-          100: "#F8DADA",
-          200: "#e6bcbc",
+          100: "#FCC4F1",
+          200: "#E5A5D9",
+          300: "#BA69AA",
+          500: "#9C3488",
+          800: "#301B2C",
         },
         screens: {
           mm: { max: "639px" },
         },
         base: {
-          50: "#F7F7F7",
-          100: "#E9E8EE",
-          300: "#B8B7BD",
-          800: "#3D3E44",
+          50: "#C7C0FA",
+          100: "#9289DA",
+          300: "#5C549D",
+          500: "#2F276C",
+          800: "#1B182F",
         },
         pale: {
-          100: "#EFEFF1",
+          100: "#D0B0C4",
         },
         grass: {
           100: "#D5FBA5",
+        },
+        egg: {
+          100: "#F7FCFE",
+          200: "#E4E8EA",
+          500: "#646B6F",
+          800: "#22292D",
         },
       },
       backgroundImage: {

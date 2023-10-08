@@ -32,8 +32,11 @@ function ArticleCarousel() {
       <div className="overflow-x-scroll">
         <div className="flex gap-4 min-w-max overflow-x-scroll p-4">
           {blogData
-            .filter((item) => {
-              return item.date?.toDate() >= getWeekDate();
+            .sort((a, b) => {
+              return b.date?.toDate() - a.date?.toDate();
+            })
+            .filter((item, index) => {
+              return index <= 3;
             })
             .map((item, index) => {
               return (
