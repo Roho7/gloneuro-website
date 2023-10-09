@@ -25,7 +25,7 @@ function ArticleCarousel() {
   };
 
   return (
-    <div className="m-4 p-4 bg-base-800 rounded-xl">
+    <div className="m-4 p-4 glass bg-base-800 rounded-xl">
       <h1 className="mb-4 text-base-50 flex items-center gap-4">
         Latest Blogs <ChevronRight />
       </h1>

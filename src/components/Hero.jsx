@@ -40,7 +40,7 @@ const HeroTop = () => {
 const HeroBanner = () => {
   return (
     <motion.div
-      className="p-4 bg-gradient-to-r from-salmon-500 text-salmon-100 col-span-2 rounded-2xl flex flex-col gap-2 justify-center"
+      className="p-4 glass bg-salmon-500 text-salmon-100 col-span-2 rounded-2xl flex flex-col gap-2 justify-center"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3, type: "spring" }}
@@ -60,7 +60,7 @@ const HeroDiscover = () => {
   };
   return (
     <motion.div
-      className="w-full h-full p-4 rounded-2xl bg-widget-img bg-[size:100%] hover:bg-[size:110%] transition-all ease-linear"
+      className="w-full h-full p-4 rounded-2xl bg-widget-img bg-[size:100%] hover:bg-[size:105%] transition-all ease-linear"
       onClick={handleCategoryScroll}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}

@@ -11,7 +11,7 @@
 
 #root {
   box-sizing: border-box;
-  @apply bg-base-800 text-base-800 min-h-screen;
+  @apply bg-base-800 text-base-800 min-h-screen -z-10;
 }
 
 h1 {
@@ -53,11 +53,15 @@ button {
 }
 
 .tag {
-  @apply m-2 p-2 border text-salmon-200 text-sm border-salmon-200 bg-salmon-100 max-w-max rounded-xl;
+  @apply m-2 p-2 border text-salmon-100 text-sm border-salmon-200 bg-salmon-500 max-w-max rounded-xl;
 }
 
 .stats-box {
-  @apply relative p-4 w-full h-32 lg:h-72 text-xl flex flex-col items-center justify-center overflow-clip;
+  @apply relative glass p-4 w-full h-32 lg:h-72 text-xl flex flex-col items-center justify-center overflow-clip;
+}
+
+.stats-box > h1 {
+  @apply lg:text-5xl;
 }
 
 .stats-icon {

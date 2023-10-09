@@ -28,7 +28,7 @@ function ReadBlogs() {
               {activeBlog.cat1 && <p className="tag"> {activeBlog.cat1} </p>}
               {activeBlog.cat2 && <p className="tag"> {activeBlog.cat2} </p>}
             </div>
-            <h1 className="text-5xl lg:text-8xl text-base-50">
+            <h1 className="text-5xl lg:text-8xl text-white">
               {activeBlog.title}
             </h1>
           </div>
