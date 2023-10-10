@@ -8,6 +8,12 @@ function ReadBlogs() {
   const activeBlog = cookie.get("activeBlog");
   const blogDate = new Date(activeBlog.date.seconds * 1000).toDateString();
   const loading = useRecoilValue(Loading);
+
+  const fillContent = async () => {
+    const container = await document.querySelector("#content");
+    container.innerHTML = activeBlog.content;
+  };
+  fillContent();
   if (loading.isLoading) {
     return <Loader />;
   } else {
@@ -34,11 +40,9 @@ function ReadBlogs() {
           </div>
           <div className="absolute top-0 left-0 h-full w-full bg-base-800 opacity-20 rounded-xl"></div>
         </div>
-        <p className="text-base-300 italic"> by {activeBlog.author} </p>
-        <p className="text-base-300 italic"> {blogDate} </p>
-        <div className="my-4 p-4 rounded-xl bg-base-100">
-          <p> {activeBlog.content} </p>
-        </div>
+        <p className="text-base-100 italic"> by {activeBlog.author} </p>
+        <p className="text-base-100 italic"> {blogDate} </p>
+        <div id="content" className=" my-4 p-6 rounded-xl bg-egg-100"></div>
       </div>
     );
   }

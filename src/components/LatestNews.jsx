@@ -8,16 +8,16 @@ function LatestNews() {
         return (
           <motion.div
             key={index}
-            className="flex w-full justify-between my-4 py-4 border-y border-base-300"
+            className="flex lg:flex-row flex-col gap-2 w-full justify-between my-4 py-4 border-y border-base-300"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, type: "spring" }}
           >
             <span>{item.date}</span>
-            <div className="w-1/4 h-40 rounded-xl overflow-hidden">
+            <div className="lg:w-1/4 h-40 rounded-xl overflow-hidden">
               <img src={item.img} alt="" className="object-cover" />
             </div>
-            <div className="w-2/5">
+            <div className="lg:w-2/5">
               <h1 className="text-2xl">{item.heading}</h1>
               <span className="">{item.description}</span>
             </div>

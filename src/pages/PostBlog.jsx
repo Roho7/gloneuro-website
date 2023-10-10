@@ -3,8 +3,19 @@ import { db } from "../server/firebase";
 import { Timestamp, doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { navbardata } from "../data/navbardata";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
+const modules = {
+  toolbar: [
+    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [{ list: "ordered" }, { list: "bullet" }],
+  ],
+};
 
 function PostBlog() {
+  const [blogContent, setBlogContent] = useState("");
   const [blogData, setBlogData] = useState({
     title: "",
     author: "",
@@ -14,16 +25,19 @@ function PostBlog() {
     cat2: "",
   });
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     setBlogData({ ...blogData, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = async () => {
     const date = Date.now();
+
     try {
       await setDoc(doc(db, "Blogs", blogData.title), {
         title: blogData.title,
         author: blogData.author,
-        content: blogData.content,
+        content: blogContent,
         img: blogData.img,
         date: Timestamp.fromDate(new Date(date)),
         cat1: blogData.cat1,
@@ -37,6 +51,8 @@ function PostBlog() {
   };
   return (
     <div className="w-full p-4">
+      <div className="bg-red-200">{blogContent}</div>
+
       <h1 className="my-4">Add a blog</h1>
       <div className="flex flex-col gap-4">
         <input
@@ -87,17 +103,15 @@ function PostBlog() {
             </select>
           </div>
         </div>
-        <textarea
-          rows={5}
-          cols="40"
-          name="content"
-          onChange={handleChange}
-          placeholder="Paste blog here"
-          className="p-4 rounded-md"
-        ></textarea>
-
-        <button onClick={handleSubmit}>Post Blog</button>
+        <ReactQuill
+          theme="snow"
+          value={blogContent}
+          onChange={setBlogContent}
+          className="w-full h-[80vh] mb-10 bg-egg-100 text-base-500"
+          modules={modules}
+        />
       </div>
+      <button onClick={handleSubmit}>Post Blog</button>
     </div>
   );
 }
