@@ -1,8 +1,6 @@
 import { auth } from "../server/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { useSetRecoilState } from "recoil";
-import { CurrentUser } from "../config/atoms";
 import { useNavigate } from "react-router-dom";
 
 function Login() {

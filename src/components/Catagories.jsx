@@ -1,5 +1,5 @@
 import { useSetRecoilState } from "recoil";
-import { navbardata } from "../data/navbardata";
+import { categories } from "../data/categoryData";
 import { searchCatagory } from "../config/atoms";
 import SearchBlogs from "./SearchBlogs";
 import { motion } from "framer-motion";
@@ -21,7 +21,7 @@ function Catagories() {
       </h1>
       <h3 className="mb-4">Click a button to filter</h3>
       <div className="flex gap-2 flex-wrap justify-stretch">
-        {navbardata.Navbar[1].content.map((item, index) => {
+        {categories.map((item, index) => {
           return (
             <button
               className="p-2 border border-base-300 rounded-xl bg-base-500 hover:bg-base-300 cursor-pointer"

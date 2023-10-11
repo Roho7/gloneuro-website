@@ -1,9 +1,9 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  signInWithPopup,
+  // createUserWithEmailAndPassword,
+  // signInWithEmailAndPassword,
+  // signOut,
+  // signInWithPopup,
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth, googleAuth } from "../server/firebase";
@@ -11,7 +11,7 @@ import { auth, googleAuth } from "../server/firebase";
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-  const [currentUserState, setCurrentUserState] = useState();
+  const [currentUserState, setCurrentUserState] = useState(null);
 
   // * FUNCTIONS *
 
@@ -19,31 +19,31 @@ export function AuthProvider({ children }) {
     onAuthStateChanged(auth, (user) => {
       setCurrentUserState(user);
     });
-  });
+  }, []);
 
-  const signup = async (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
-  };
-  const login = async (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
-  };
-  const signout = async () => {
-    return signOut(auth);
-  };
-  const signInWithGoogle = async () => {
-    try {
-      await signInWithPopup(auth, googleAuth);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const signUp = async (email, password) => {
+  //   return createUserWithEmailAndPassword(auth, email, password);
+  // };
+  // const login = async (email, password) => {
+  //   return signInWithEmailAndPassword(auth, email, password);
+  // };
+  // const signout = async () => {
+  //   return signOut(auth);
+  // };
+  // const signInWithGoogle = async () => {
+  //   try {
+  //     await signInWithPopup(auth, googleAuth);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   const value = {
     currentUserState,
-    signup,
-    login,
-    signout,
-    signInWithGoogle,
+    // signUp,
+    // login,
+    // signout,
+    // signInWithGoogle,
   };
 
   console.log("user", currentUserState);
