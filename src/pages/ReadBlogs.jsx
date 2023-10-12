@@ -2,6 +2,7 @@ import { useRecoilValue } from "recoil";
 import Cookies from "universal-cookie";
 import { Loading } from "../config/atoms";
 import Loader from "../components/Loader";
+import { useEffect } from "react";
 
 function ReadBlogs() {
   const cookie = new Cookies();
@@ -9,11 +10,11 @@ function ReadBlogs() {
   const blogDate = new Date(activeBlog.date.seconds * 1000).toDateString();
   const loading = useRecoilValue(Loading);
 
-  const fillContent = async () => {
-    const container = await document.querySelector("#content");
+  useEffect(() => {
+    const container = document.querySelector("#content");
     container.innerHTML = activeBlog.content;
-  };
-  fillContent();
+  }, []);
+
   if (loading.isLoading) {
     return <Loader />;
   } else {
