@@ -5,7 +5,6 @@ import { useState } from "react";
 
 function Navbar() {
   const [user, setUser] = useState();
-  const navigate = useNavigate();
   const auth = getAuth();
 
   onAuthStateChanged(auth, (user) => {
@@ -16,7 +15,7 @@ function Navbar() {
     }
   });
   return (
-    <header className=" max-sm:hidden glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50">
+    <header className="max-sm:hidden glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50">
       <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
       <div className="flex gap-4 ">
         {navbardata.Navbar.map((item, index) => {
@@ -34,22 +33,36 @@ function Navbar() {
     </header>
   );
 }
-const NavElement = ({ title, content }) => (
-  <div className="nav-title group">
-    {title}
+function NavElement({ title, content }) {
+  const navigate = useNavigate();
+
+  return (
     <div
-      className={
-        content != undefined ? "nav-tooltip group-hover:scale-100" : ""
-      }
+      className="nav-title group"
+      onClick={() => {
+        if (title === "Home") {
+          navigate("/");
+        } else {
+          navigate(`/${title}`);
+        }
+      }}
     >
-      {content?.map((item, index) => {
-        return (
-          <p className="hover:text-base-100" key={index}>
-            {item}
-          </p>
-        );
-      })}
+      {title}
+      <div
+        className={
+          content != undefined ? "nav-tooltip group-hover:scale-100" : ""
+        }
+      >
+        {content?.map((item, index) => {
+          return (
+            <p className="hover:text-base-100" key={index}>
+              {item}
+            </p>
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  );
+}
+
 export default Navbar;

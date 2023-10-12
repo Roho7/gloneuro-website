@@ -5,7 +5,7 @@ import { Book, PenTool, Shield, Users } from "react-feather";
 function StatsSection() {
   return (
     <motion.div
-      className="grid grid-cols-1 lg:grid-cols-4 mx-4 rounded-xl overflow-clip shadow-xl text-base-500"
+      className="m-4 grid grid-cols-1 lg:grid-cols-4 mx-4 rounded-xl overflow-clip shadow-xl text-base-500"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, type: "spring" }}

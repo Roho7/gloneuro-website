@@ -28,6 +28,10 @@ input {
   @apply p-2 rounded-md;
 }
 
+a {
+  @apply cursor-pointer text-base-50 hover:text-base-100;
+}
+
 button {
   @apply p-2 rounded-md bg-pale-100 hover:bg-base-50;
 }

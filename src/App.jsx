@@ -9,6 +9,11 @@ import PostBlog from "./pages/PostBlog";
 import PostNews from "./pages/PostNews";
 import Navbar from "./components/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
+import Discover from "./pages/Discover";
+import Explore from "./pages/Explore";
+import Opportunities from "./pages/Opportunities";
+import Discussion from "./pages/Discussion";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -19,8 +24,13 @@ function App() {
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Homepage />} />
+            <Route path={"/"} element={<Homepage />} />
             <Route path="/blogs/:blogId" element={<ReadBlogs />} />
+            <Route path="/discover" element={<Discover />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/discussion" element={<Discussion />} />
+            <Route path="/opportunities" element={<Opportunities />} />
+            <Route path="/about" element={<About />} />
             <Route
               path="/blogs/write"
               element={

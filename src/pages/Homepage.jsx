@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 function Homepage() {
   return (
-    <div>
+    <div className="">
       <div className="relative z-[1]">
         <Hero />
         <br />
