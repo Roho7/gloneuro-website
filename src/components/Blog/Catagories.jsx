@@ -1,6 +1,6 @@
 import { useSetRecoilState } from "recoil";
-import { categories } from "../data/categoryData";
-import { searchCatagory } from "../config/atoms";
+import { categories } from "../../data/categoryData";
+import { searchCatagory } from "../../config/atoms";
 import SearchBlogs from "./SearchBlogs";
 import { motion } from "framer-motion";
 

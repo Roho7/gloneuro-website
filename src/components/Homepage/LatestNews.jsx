@@ -1,5 +1,5 @@
 import { motion, spring } from "framer-motion";
-import { News } from "../data/news";
+import { News } from "../../data/news";
 function LatestNews() {
   return (
     <div className=" p-8 rounded-xl glass text-base-50">

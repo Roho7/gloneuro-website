@@ -1,10 +1,10 @@
-import Hero from "../components/Hero";
-import LatestNews from "../components/LatestNews";
-import ArticleCarousel from "../components/ArticleCarousel";
-import Catagories from "../components/Catagories";
+import Hero from "../components/Homepage/Hero";
+import LatestNews from "../components/Homepage/LatestNews";
+import ArticleCarousel from "../components/Homepage/ArticleCarousel";
+import Catagories from "../components/Blog/Catagories";
 import Footer from "../components/Footer";
-import QuoteComponent from "../components/QuoteComponent";
-import StatsSection from "../components/StatsSection";
+import QuoteComponent from "../components/Homepage/QuoteComponent";
+import StatsSection from "../components/Homepage/StatsSection";
 import { motion } from "framer-motion";
 
 function Homepage() {

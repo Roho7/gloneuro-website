@@ -1,5 +1,5 @@
 import React from "react";
-import Catagories from "../components/Catagories";
+import Catagories from "../components/Blog/Catagories";
 
 function Discover() {
   return (

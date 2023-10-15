@@ -1,8 +1,8 @@
 // import { BlogData } from "../data/blogdata";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../server/firebase";
+import { db } from "../../server/firebase";
 import { useEffect, useState } from "react";
-import BlogCard from "./BlogCard";
+import BlogCard from "../Blog/BlogCard";
 import { ChevronRight } from "react-feather";
 
 function ArticleCarousel() {
@@ -31,7 +31,7 @@ function ArticleCarousel() {
             .sort((a, b) => {
               return b.date?.toDate() - a.date?.toDate();
             })
-            .filter((item, index) => {
+            .filter((_, index) => {
               return index <= 3;
             })
             .map((item, index) => {
