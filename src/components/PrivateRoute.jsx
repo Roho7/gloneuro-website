@@ -6,13 +6,10 @@ function PrivateRoute({ children }) {
   const { currentUserState } = useAuth();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!currentUserState) {
-      return navigate("/login");
-    } else {
-      return children;
-    }
-  }, [currentUserState]);
+  if (!currentUserState) {
+    return navigate("/login");
+  } else {
+    return children;
+  }
 }
-
 export default PrivateRoute;

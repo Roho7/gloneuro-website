@@ -1,25 +1,48 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import Cookies from "universal-cookie";
 import { Loading } from "../config/atoms";
 import Loader from "../components/Loader";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../server/firebase";
 
 function ReadBlogs() {
-  const cookie = new Cookies();
-  const activeBlog = cookie.get("activeBlog");
-  const blogDate = new Date(activeBlog.date.seconds * 1000).toDateString();
+  const setLoading = useSetRecoilState(Loading);
   const loading = useRecoilValue(Loading);
+  const cookie = new Cookies();
+  const blogCookie = cookie.get("activeBlog");
+
+  const [activeBlog, setActiveBlog] = useState({});
+  const [blogDate, setBlogDate] = useState(null);
+
+  const getData = async () => {
+    setLoading({ isLoading: true });
+    const blogRef = doc(db, "Blogs", blogCookie);
+    const data = await getDoc(blogRef);
+    setActiveBlog(data.data());
+    console.log("activeBlog", activeBlog);
+    setLoading({ isLoading: false });
+  };
 
   useEffect(() => {
+    getData();
+  }, []);
+
+  const setContent = async () => {
     const container = document.querySelector("#content");
     container.innerHTML = activeBlog.content;
-  }, []);
+    setBlogDate(new Date(activeBlog.date.seconds * 1000).toDateString());
+  };
+
+  useEffect(() => {
+    setContent();
+  }, [activeBlog]);
 
   if (loading.isLoading) {
     return <Loader />;
   } else {
     return (
-      <div className="p-4 w-screen">
+      <div className="p-4 w-full">
         <div
           className="relative w-full lg:h-[40vh] mb-4 p-4 flex flex-col justify-between rounded-xl"
           style={{

@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 function Homepage() {
   return (
     <div className="">
-      <div className="relative z-[1]">
+      <div className="pt-2 relative z-[1]">
         <Hero />
         <br />
         <QuoteComponent />

@@ -14,27 +14,22 @@ import Explore from "./pages/Explore";
 import Opportunities from "./pages/Opportunities";
 import Discussion from "./pages/Discussion";
 import About from "./pages/About";
-import { Hamburger } from "./components/HamburgerMenu";
 import { useEffect, useState } from "react";
+import HamMenuHandle from "./components/Hamburger/HamMenuHandle";
 
 function App() {
   const [width, setWidth] = useState();
-  // useEffect(() => {
-  //   setWidth(window.innerWidth);
-  //   console.log(width);
-  // }, [window.innerWidth]);
-
-  addEventListener("resize", () => {
+  useEffect(() => {
     setWidth(window.innerWidth);
-  });
+    console.log(width);
+  }, [window.innerWidth]);
 
   return (
     <div className="">
       <AuthProvider>
         <RecoilRoot>
           <Navbar />
-
-          {width < 500 && <Hamburger />}
+          {width < 500 && <HamMenuHandle />}
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
