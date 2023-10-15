@@ -42,8 +42,11 @@ function Login() {
 
   return (
     <div className="w-screen h-screen flex flex-col gap-4 justify-center items-center">
-      <img src="src/assets/logo-1.png" alt="" />
-      <div className="w-1/3 p-4 bg-base-100 flex flex-col gap-4 rounded-xl">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/gloneuro-website.appspot.com/o/logo-1.png?alt=media&token=0f21063a-0fc3-407a-9d52-c9ba627d5193"
+        alt=""
+      />
+      <div className=" m-4 lg:w-1/3 p-4 bg-base-100 flex flex-col gap-4 rounded-xl">
         <h1>Login</h1>
         <input
           type="text"

@@ -9,7 +9,7 @@ function HamMenuHandle() {
   return (
     <div>
       <button
-        className="p-4 absolute top-4 right-4 z-50"
+        className="glass bg-egg-100 p-4 fixed top-0 right-0 z-50 rounded-none"
         onClick={() => setToggle(!toggle)}
       >
         <Menu />
@@ -22,7 +22,7 @@ const HamMenuItems = () => {
   const navigate = useNavigate();
   return (
     <motion.div
-      className="absolute h-screen w-1/2 top-0 left-0 z-50 glass p-4"
+      className="fixed h-screen w-1/2 top-0 left-0 z-50 glass p-4"
       initial={{ x: -100 }}
       animate={{ x: 0 }}
     >

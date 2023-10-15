@@ -2,11 +2,10 @@ import React from "react";
 
 function About() {
   return (
-    <div className="lg:p-8 text-egg-100 min-h-screen relative z-[1] overflow-hidden">
+    <div className="p-4 text-egg-100 min-h-screen relative z-[1] overflow-hidden">
       <div
         style={{
-          backgroundSize: "100%",
-          backgroundPosition: "bottom",
+          backgroundPosition: "center",
           backgroundImage:
             "url(https://images.pexels.com/photos/4031688/pexels-photo-4031688.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
         }}
@@ -14,7 +13,7 @@ function About() {
       >
         <h1 className="inner-page-hero-text">About GloNeuro</h1>
       </div>
-      <div className="flex gap-0 rounded-xl overflow-clip">
+      <div className="flex max-md:flex-col  gap-0 rounded-xl overflow-clip">
         <div className="h-[50vh] w-[200vw]">
           <img
             src="https://images.pexels.com/photos/17483867/pexels-photo-17483867/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-how-machine-learning-is-inspired-by-neuroscience-and-the-human-brain-it-was-created-by-novoto-studio-as-par.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -98,7 +97,7 @@ function About() {
           alt=""
         />
       </div>
-      <div className="absolute top-[200vh]">
+      <div className="absolute top-[200vh] z-[-1] ">
         <img
           src="https://firebasestorage.googleapis.com/v0/b/gloneuro-website.appspot.com/o/bg-blob-2.png?alt=media&token=9790f5cd-6e0c-4a8a-98eb-8a158e1736d3&_gl=1*1siop9p*_ga*MjExOTg3NjYzMi4xNjk0MzMzMTIx*_ga_CW55HF8NVT*MTY5NzM0NzcxNy40Ny4xLjE2OTczNDkzNjQuNjAuMC4w"
           alt=""

@@ -62,7 +62,7 @@ button {
 }
 
 .stats-box {
-  @apply relative glass p-4 w-full h-32 lg:h-72 text-xl text-egg-100 flex flex-col items-center justify-center overflow-clip;
+  @apply relative p-4 w-full h-32 lg:h-72 text-xl text-egg-100 flex flex-col items-center justify-center overflow-clip;
 }
 
 .stats-box > h1 {
@@ -78,9 +78,9 @@ button {
 }
 
 .inner-page-hero {
-  @apply relative p-8 mb-10 min-h-[60vh] rounded-xl;
+  @apply relative p-8 mb-10 min-h-[60vh] rounded-xl bg-no-repeat bg-cover;
 }
 
 .inner-page-hero-text {
-  @apply absolute my-10 text-8xl text-egg-100 bottom-0 drop-shadow-lg;
+  @apply absolute my-10 text-6xl lg:text-8xl text-egg-100 bottom-0 drop-shadow-lg;
 }

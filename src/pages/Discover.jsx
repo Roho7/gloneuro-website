@@ -6,8 +6,7 @@ function Discover() {
     <div className="h-full p-4">
       <div
         style={{
-          backgroundSize: "100%",
-          backgroundPosition: "bottom",
+          backgroundPosition: "center",
           backgroundImage:
             "url(https://images.pexels.com/photos/1635935/pexels-photo-1635935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         }}
