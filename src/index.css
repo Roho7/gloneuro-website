@@ -16,7 +16,7 @@
 }
 
 h1 {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold my-4;
 }
 
 h2 {
@@ -75,4 +75,12 @@ button {
 
 .stats-header {
   @apply text-3xl;
+}
+
+.inner-page-hero {
+  @apply relative p-8 mb-10 min-h-[60vh] rounded-xl;
+}
+
+.inner-page-hero-text {
+  @apply absolute my-10 text-8xl text-egg-100 bottom-0 drop-shadow-lg;
 }

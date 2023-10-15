@@ -16,7 +16,11 @@ function Navbar() {
   });
   return (
     <header className="max-sm:hidden glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50">
-      <img src="src/assets/logo-1.png" alt="" className="w-32 object-cover" />
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/gloneuro-website.appspot.com/o/logo-1.png?alt=media&token=0f21063a-0fc3-407a-9d52-c9ba627d5193&_gl=1*jao8ue*_ga*MjExOTg3NjYzMi4xNjk0MzMzMTIx*_ga_CW55HF8NVT*MTY5NzM0NzcxNy40Ny4xLjE2OTczNDk5NzAuNTIuMC4w"
+        alt=""
+        className="w-32 object-cover"
+      />
       <div className="flex gap-4 ">
         {navbardata.Navbar.map((item, index) => {
           return (

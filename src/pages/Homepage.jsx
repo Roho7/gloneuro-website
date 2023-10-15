@@ -49,10 +49,16 @@ function Homepage() {
         />
       </motion.svg>
       <div className="absolute top-[20vh] right-0">
-        <img src="src/assets/bg-blob-1.png" alt="" />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/gloneuro-website.appspot.com/o/bg-blob-1.png?alt=media&token=a4b988ec-f647-45a5-89a1-6681029c77a9&_gl=1*tik9xh*_ga*MjExOTg3NjYzMi4xNjk0MzMzMTIx*_ga_CW55HF8NVT*MTY5NzM0NzcxNy40Ny4xLjE2OTczNDkyMTkuMjIuMC4w"
+          alt=""
+        />
       </div>
       <div className="absolute top-[200vh]">
-        <img src="src/assets/bg-blob-2.png" alt="" />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/gloneuro-website.appspot.com/o/bg-blob-2.png?alt=media&token=9790f5cd-6e0c-4a8a-98eb-8a158e1736d3&_gl=1*1siop9p*_ga*MjExOTg3NjYzMi4xNjk0MzMzMTIx*_ga_CW55HF8NVT*MTY5NzM0NzcxNy40Ny4xLjE2OTczNDkzNjQuNjAuMC4w"
+          alt=""
+        />
       </div>
     </div>
   );
