@@ -2,7 +2,7 @@ import { motion, spring } from "framer-motion";
 import { News } from "../data/news";
 function LatestNews() {
   return (
-    <div className="m-4 p-8 rounded-xl glass text-base-50">
+    <div className=" p-8 rounded-xl glass text-base-50">
       <h1>Latest News</h1>
       {News.map((item, index) => {
         return (

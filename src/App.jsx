@@ -16,6 +16,7 @@ import Discussion from "./pages/Discussion";
 import About from "./pages/About";
 import { useEffect, useState } from "react";
 import HamMenuHandle from "./components/Hamburger/HamMenuHandle";
+import Footer from "./components/Footer";
 
 function App() {
   const [width, setWidth] = useState();
@@ -56,9 +57,8 @@ function App() {
                 </PrivateRoute>
               }
             />
-            {/* <Route path="/blogs/write" element={<PostBlog />} />
-          <Route path="/news/post" element={<PostNews />} /> */}
           </Routes>
+          <Footer />
         </RecoilRoot>
       </AuthProvider>
     </div>

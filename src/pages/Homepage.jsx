@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 function Homepage() {
   return (
     <div className="">
-      <div className="pt-2 relative z-[1]">
+      <div className="p-4 relative z-[1]">
         <Hero />
         <br />
         <QuoteComponent />
@@ -23,7 +23,6 @@ function Homepage() {
         <br />
         <StatsSection />
         <br />
-        <Footer />
       </div>
       <motion.svg
         style={{ width: "100%", height: "100%" }}

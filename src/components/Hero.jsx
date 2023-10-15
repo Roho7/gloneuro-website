@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 function Hero() {
   return (
-    <div className="relative m-4 lg:h-screen grid lg:grid-flow-row-dense grid-cols-1 grid-rows-5 lg:grid-cols-3 lg:grid-rows-3 gap-4">
+    <div className="relative lg:h-screen grid lg:grid-flow-row-dense grid-cols-1 grid-rows-5 lg:grid-cols-3 lg:grid-rows-3 gap-4">
       <HeroTop />
       <div className="flex flex-col row-span-3 gap-4">
         <LatestBlog />

@@ -20,12 +20,8 @@ function ArticleCarousel() {
     getBlogs();
   }, []);
 
-  const getWeekDate = () => {
-    return new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-  };
-
   return (
-    <div className="m-4 p-4 glass bg-base-800 rounded-xl">
+    <div className=" p-4 glass bg-base-800 rounded-xl">
       <h1 className="mb-4 text-base-50 flex items-center gap-4">
         Latest Blogs <ChevronRight />
       </h1>
