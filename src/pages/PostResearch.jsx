@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { db } from "../server/firebase";
-import { Timestamp, doc, setDoc } from "firebase/firestore";
 
-function PostNews() {
+function PostResearch() {
   const [newsData, setNewsData] = useState({
-    eventDate: "",
     heading: "",
-    img: "",
     description: "",
+    institution: "",
+    position: "",
+    deadline: "",
     link: "",
   });
   const handleChange = (e) => {
@@ -19,15 +18,16 @@ function PostNews() {
     } else {
       const date = Date.now();
       try {
-        await setDoc(doc(db, "Blogs", newsData.id), {
-          eventDate: newsData.eventDate,
+        await setDoc(doc(db, "Research", newsData.id), {
           heading: newsData.heading,
-          img: newsData.img,
           description: newsData.description,
+          institution: newsData.institution,
+          position: newsData.position,
+          deadline: newsData.deadline,
           link: newsData.link,
           date: Timestamp.fromDate(new Date(date)),
         });
-        console.log("succesfull");
+        alert("Posted succesfully");
       } catch (err) {
         console.log(err);
       }
@@ -35,7 +35,7 @@ function PostNews() {
   };
   return (
     <div className="w-full p-4">
-      <h1 className="my-4">Post a News</h1>
+      <h1 className="my-4 text-base-50">Post a Research Opportunity</h1>
       <div className="flex flex-col gap-4">
         <input
           type="text"
@@ -46,17 +46,24 @@ function PostNews() {
         />
         <input
           type="text"
-          name="eventDate"
-          id="eventDate"
+          name="deadline"
+          id="deadline"
           onChange={handleChange}
-          placeholder="Enter date of event"
+          placeholder="Enter deadline of event"
         />
         <input
           type="text"
-          name="img"
-          id="img"
+          name="institution"
+          id="institution"
           onChange={handleChange}
-          placeholder="Enter image link"
+          placeholder="Enter institution"
+        />
+        <input
+          type="text"
+          name="position"
+          id="position"
+          onChange={handleChange}
+          placeholder="Enter position"
         />
         <input
           type="text"
@@ -73,10 +80,10 @@ function PostNews() {
           placeholder="Enter Description"
           className="p-4 rounded-md"
         ></textarea>
-        <button onClick={handleSubmit}>Post Blog</button>
+        <button onClick={handleSubmit}>Post Research</button>
       </div>
     </div>
   );
 }
 
-export default PostNews;
+export default PostResearch;

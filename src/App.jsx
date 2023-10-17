@@ -17,6 +17,8 @@ import About from "./pages/About";
 import { useEffect, useState } from "react";
 import HamMenuHandle from "./components/Hamburger/HamMenuHandle";
 import Footer from "./components/Footer";
+import PostResearch from "./pages/PostResearch";
+import PostEducation from "./pages/PostEducation";
 
 function App() {
   const [width, setWidth] = useState();
@@ -50,10 +52,26 @@ function App() {
               }
             />
             <Route
-              path="/news/post"
+              path="/post/news"
               element={
                 <PrivateRoute>
                   <PostNews />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/post/education"
+              element={
+                <PrivateRoute>
+                  <PostEducation />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/post/research"
+              element={
+                <PrivateRoute>
+                  <PostResearch />
                 </PrivateRoute>
               }
             />

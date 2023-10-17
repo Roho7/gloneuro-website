@@ -9,7 +9,6 @@ function Login() {
     password: "",
   });
   const navigate = useNavigate();
-  // const cookie = Cookies(null, { path: "/" });
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
@@ -24,7 +23,6 @@ function Login() {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            console.log(user);
             if (user.uid) {
               navigate("/");
             } else {
