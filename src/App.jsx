@@ -24,8 +24,7 @@ function App() {
   const [width, setWidth] = useState();
   useEffect(() => {
     setWidth(window.innerWidth);
-    console.log(width);
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <div className="">
@@ -48,7 +47,7 @@ function App() {
           <Route path="/post/education" element={<PostEducation />} />
           <Route path="/post/research" element={<PostResearch />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </RecoilRoot>
     </div>
   );
