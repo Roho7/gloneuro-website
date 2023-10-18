@@ -1,15 +1,23 @@
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../server/AuthContext";
-import { useEffect } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useState, useEffect } from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { auth } from "../server/firebase";
 
-function PrivateRoute({ children }) {
-  const { currentUserState } = useAuth();
-  const navigate = useNavigate();
+const Protected = () => {
+  const [user, setUser] = useState();
+  const auth = getAuth();
 
-  if (!currentUserState) {
-    return navigate("/login");
-  } else {
-    return children;
-  }
-}
-export default PrivateRoute;
+  useEffect(() => {
+    onAuthStateChanged(auth, (userd) => {
+      if (userd) {
+        setUser(userd.displayName);
+      } else {
+      }
+    });
+  });
+  console.log(user);
+
+  return user ? <Outlet /> : <Navigate to="/login" />;
+};
+
+export default Protected;

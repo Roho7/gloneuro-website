@@ -2,6 +2,7 @@ import { auth } from "../server/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 function Login() {
   const [userData, setUserData] = useState({
@@ -9,6 +10,7 @@ function Login() {
     password: "",
   });
   const navigate = useNavigate();
+  const cookies = new Cookies();
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
@@ -24,6 +26,7 @@ function Login() {
             // Signed in
             const user = userCredential.user;
             if (user.uid) {
+              cookies.set("username", user);
               navigate("/");
             } else {
               alert("Invalid User");

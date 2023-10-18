@@ -19,7 +19,7 @@ function PostNews() {
     } else {
       const date = Date.now();
       try {
-        await setDoc(doc(db, "Blogs", newsData.id), {
+        await setDoc(doc(db, "Blogs", newsData.heading), {
           eventDate: newsData.eventDate,
           heading: newsData.heading,
           img: newsData.img,
@@ -35,7 +35,7 @@ function PostNews() {
   };
   return (
     <div className="w-full p-4">
-      <h1 className="my-4">Post a News</h1>
+      <h1 className="my-4 text-base-50">Post a News</h1>
       <div className="flex flex-col gap-4">
         <input
           type="text"

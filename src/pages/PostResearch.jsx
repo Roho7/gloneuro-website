@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { db } from "../server/firebase";
+import { Timestamp, doc, setDoc } from "firebase/firestore";
 
 function PostResearch() {
   const [newsData, setNewsData] = useState({
@@ -18,7 +20,7 @@ function PostResearch() {
     } else {
       const date = Date.now();
       try {
-        await setDoc(doc(db, "Research", newsData.id), {
+        await setDoc(doc(db, "Research", newsData.heading), {
           heading: newsData.heading,
           description: newsData.description,
           institution: newsData.institution,

@@ -29,11 +29,6 @@ function Navbar() {
         })}
       </div>
       {user && <span>{user}</span>}
-      {/* <input
-        type="text"
-        placeholder="search"
-        className="border rounded-3xl py-2 px-4"
-      /> */}
     </header>
   );
 }

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { navbardata } from "../data/navbardata";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { categories } from "../data/categoryData";
 
 const modules = {
   toolbar: [
@@ -53,7 +54,7 @@ function PostBlog() {
     <div className="w-full p-4">
       <div className="bg-red-200">{blogContent}</div>
 
-      <h1 className="my-4">Add a blog</h1>
+      <h1 className="my-4 text-base-50  ">Add a blog</h1>
       <div className="flex flex-col gap-4">
         <input
           type="text"
@@ -80,7 +81,7 @@ function PostBlog() {
           <div className="flex flex-col">
             <label htmlFor="cat1">Select First Category</label>
             <select name="cat1" id="cat1" onChange={handleChange}>
-              {navbardata.Navbar[1].content.map((item) => {
+              {categories.map((item) => {
                 return (
                   <option value={item} key={item}>
                     {item}
@@ -93,7 +94,7 @@ function PostBlog() {
             <label htmlFor="cat2">Select Second Category</label>
 
             <select name="cat2" id="cat2" onChange={handleChange}>
-              {navbardata.Navbar[1].content.map((item) => {
+              {categories.map((item) => {
                 return (
                   <option value={item} key={item}>
                     {item}

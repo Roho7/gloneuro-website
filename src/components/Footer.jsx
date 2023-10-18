@@ -2,12 +2,15 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../server/firebase";
 import { useState } from "react";
+import Cookies from "universal-cookie";
 
 function Footer() {
   const [currentUser, setCurrentUser] = useState();
   const navigate = useNavigate();
+  const cookies = new Cookies();
 
   const handleSignOut = () => {
+    cookies.remove("username");
     signOut(auth);
     location.reload();
   };
@@ -30,18 +33,9 @@ function Footer() {
         <a href="">Discussion</a>
       </div>
       <div className="flex flex-col">
-        {currentUser && (
-          <a onClick={() => navigate("/blogs/write")}>Add Blog</a>
-        )}
-        {currentUser && <a onClick={() => navigate("/post/news")}>Add News</a>}
-        {currentUser && (
-          <a onClick={() => navigate("/post/education")}>Add Education</a>
-        )}
-        {currentUser && (
-          <a onClick={() => navigate("/post/research")}>Add Research</a>
-        )}
         {currentUser && <a onClick={handleSignOut}>Sign Out</a>}
-        {!currentUser && <a onClick={() => navigate("/login")}>Login</a>}
+        {currentUser && <a href="/post">Post</a>}
+        {!currentUser && <a href="/login">Login</a>}
       </div>
     </div>
   );
