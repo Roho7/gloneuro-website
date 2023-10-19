@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../server/firebase";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 
 function Footer() {
@@ -15,28 +15,29 @@ function Footer() {
     location.reload();
   };
   const Auth = getAuth();
-
-  onAuthStateChanged(Auth, (user) => {
-    if (user) {
-      const setUser = user.email;
-      setCurrentUser(setUser);
-    } else {
-    }
-  });
+  useEffect(() => {
+    onAuthStateChanged(Auth, (user) => {
+      if (user) {
+        const setUser = user.email;
+        setCurrentUser(setUser);
+      } else {
+      }
+    });
+  }, []);
   return (
     <div className="relative w-full h-full bg-base-500 p-16 grid grid-cols-2 gap-4 z-50">
       <div className="flex flex-col">
-        <a href="">Home</a>
-        <a href="">About Us</a>
-        <a href="">Opportunities</a>
-        <a href="">Explore</a>
-        <a href="">Discussion</a>
+        <a href="/home">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/opportuniies">Opportunities</a>
+        <a href="/explore">Explore</a>
+        <a href="/discussion">Discussion</a>
       </div>
-      <div className="flex flex-col">
+      {/* <div className="flex flex-col">
         {currentUser && <a onClick={handleSignOut}>Sign Out</a>}
         {currentUser && <a href="/post">Post</a>}
         {!currentUser && <a href="/login">Login</a>}
-      </div>
+      </div> */}
     </div>
   );
 }

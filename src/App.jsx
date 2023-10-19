@@ -47,7 +47,7 @@ function App() {
           <Route path="/post/education" element={<PostEducation />} />
           <Route path="/post/research" element={<PostResearch />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </RecoilRoot>
     </div>
   );

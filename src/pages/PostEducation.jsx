@@ -22,7 +22,7 @@ function PostEducation() {
     } else {
       const date = Date.now();
       try {
-        await setDoc(doc(db, "Education", newsData.heading), {
+        await setDoc(doc(db, "Education", newsData.id), {
           eventDate: newsData.eventDate,
           heading: newsData.heading,
           description: newsData.description,
@@ -43,6 +43,13 @@ function PostEducation() {
     <div className="w-full p-4">
       <h1 className="my-4 text-base-50">Post Education</h1>
       <div className="flex flex-col gap-4">
+        <input
+          type="text"
+          name="id"
+          id="id"
+          onChange={handleChange}
+          placeholder="Enter an ID"
+        />
         <input
           type="text"
           name="heading"

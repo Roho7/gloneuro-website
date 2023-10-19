@@ -2,19 +2,28 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../server/firebase";
 import EducationCard from "../components/EducationCard";
+import ResearchCard from "./ResearchCard";
 
 function Opportunities() {
   const [eduData, setEduData] = useState([]);
+  const [resData, setResData] = useState([]);
 
   useEffect(() => {
     const getBlogs = async () => {
-      const blogRef = collection(db, "Education");
-      const data = await getDocs(blogRef);
-      const filteredData = data.docs.map((doc) => ({
+      const eduRef = collection(db, "Education");
+      const resRef = collection(db, "Research");
+      const eduData = await getDocs(eduRef);
+      const resData = await getDocs(resRef);
+      const filteredEduData = eduData.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
-      setEduData(filteredData);
+      const filteredResData = resData.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setEduData(filteredEduData);
+      setResData(filteredResData);
     };
     getBlogs();
   }, []);
@@ -25,17 +34,24 @@ function Opportunities() {
         style={{
           backgroundPosition: "center",
           backgroundImage:
-            "url(https://images.pexels.com/photos/1635935/pexels-photo-1635935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "url(https://images.pexels.com/photos/2526097/pexels-photo-2526097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         }}
         className="inner-page-hero"
       >
-        <h1 className="inner-page-hero-text">Discover</h1>
+        <h1 className="inner-page-hero-text">Opportunities</h1>
       </div>
       <h1 className="p-4 text-4xl text-base-50">Education And Training</h1>
-      {eduData.map((item, index) => {
-        return <EducationCard data={item} key={index} />;
-      })}
+      <div className="p-4 flex gap-2 overflow-scroll">
+        {eduData.map((item, index) => {
+          return <EducationCard data={item} key={index} />;
+        })}
+      </div>
       <h1 className="p-4 text-4xl text-base-50">Research</h1>
+      <div className="p-4 flex gap-2 overflow-scroll">
+        {resData.map((item, index) => {
+          return <ResearchCard data={item} key={index} />;
+        })}
+      </div>
       <h1 className="p-4 text-4xl text-base-50">Upcoming Conferences</h1>
     </div>
   );

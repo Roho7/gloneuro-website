@@ -20,7 +20,7 @@ function PostResearch() {
     } else {
       const date = Date.now();
       try {
-        await setDoc(doc(db, "Research", newsData.heading), {
+        await setDoc(doc(db, "Research", newsData.id), {
           heading: newsData.heading,
           description: newsData.description,
           institution: newsData.institution,
@@ -39,6 +39,13 @@ function PostResearch() {
     <div className="w-full p-4">
       <h1 className="my-4 text-base-50">Post a Research Opportunity</h1>
       <div className="flex flex-col gap-4">
+        <input
+          type="text"
+          name="id"
+          id="id"
+          onChange={handleChange}
+          placeholder="Enter an ID"
+        />
         <input
           type="text"
           name="heading"
