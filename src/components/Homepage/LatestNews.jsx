@@ -1,10 +1,31 @@
-import { motion, spring } from "framer-motion";
-import { News } from "../../data/news";
+import { motion } from "framer-motion";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../server/firebase";
+import { useEffect, useState } from "react";
+
 function LatestNews() {
+  const [news, setNews] = useState([]);
+  const [newsDate, setNewsDate] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const newsRef = collection(db, "Education");
+      const newsData = await getDocs(newsRef);
+      const filteredNewsData = newsData.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setNews(
+        filteredNewsData.filter((_, index) => {
+          return index <= 3;
+        }),
+      );
+    };
+    getData();
+  }, []);
   return (
     <div className=" p-8 rounded-xl glass text-base-50">
       <h1>Latest News</h1>
-      {News.map((item, index) => {
+      {news.map((item, index) => {
         return (
           <motion.div
             key={index}
@@ -13,7 +34,7 @@ function LatestNews() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, type: "spring" }}
           >
-            <span>{item.date}</span>
+            <span>{item.eventDate}</span>
             <div className="lg:w-1/4 h-40 rounded-xl overflow-hidden">
               <img src={item.img} alt="" className="object-cover" />
             </div>
