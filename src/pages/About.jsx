@@ -2,18 +2,18 @@ import React from "react";
 
 function About() {
   return (
-    <div className="p-4 text-egg-100 min-h-screen relative z-[1] overflow-hidden">
+    <div className=" text-egg-100 min-h-screen relative z-[1] overflow-hidden">
       <div
         style={{
           backgroundPosition: "center",
           backgroundImage:
-            "url(https://images.pexels.com/photos/4031688/pexels-photo-4031688.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
+            "url(https://images.pexels.com/photos/10188003/pexels-photo-10188003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
         }}
         className="inner-page-hero"
       >
         <h1 className="inner-page-hero-text">About GloNeuro</h1>
       </div>
-      <div className="flex max-md:flex-col  gap-0 rounded-xl overflow-clip">
+      <div className="m-4 flex max-md:flex-col  gap-0 rounded-xl overflow-clip">
         <div className="h-[50vh] w-[200vw]">
           <img
             src="https://images.pexels.com/photos/17483867/pexels-photo-17483867/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-how-machine-learning-is-inspired-by-neuroscience-and-the-human-brain-it-was-created-by-novoto-studio-as-par.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -36,7 +36,7 @@ function About() {
         </p>
       </div>
       <br />
-      <div className="p-4 glass bg-salmon-300 rounded-xl text-egg-100">
+      <div className="m-4 p-4 glass bg-salmon-300 rounded-xl text-egg-100">
         <h1>Our Objectives at GloNeuro:</h1>
         <ul className=" m-4 list-disc">
           <li>

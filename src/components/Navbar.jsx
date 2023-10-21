@@ -2,6 +2,7 @@ import { navbardata } from "../data/navbardata";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
+import { User, UserPlus } from "react-feather";
 
 function Navbar() {
   const [user, setUser] = useState();
@@ -28,7 +29,14 @@ function Navbar() {
           );
         })}
       </div>
-      {user && <span>{user}</span>}
+      {user && (
+        <div className="nav-title group">
+          <User />
+          <div className="nav-tooltip right-0 group-hover:scale-100">
+            {user}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
