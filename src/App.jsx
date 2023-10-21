@@ -19,40 +19,50 @@ import PostNews from "./pages/PostNews";
 import PostEducation from "./pages/PostEducation";
 import PostResearch from "./pages/PostResearch";
 import Protected from "./components/PrivateRoute";
+import PreLoader from "./components/Animation/PreLoader";
 
 function App() {
+  const [preLoad, setPreLoad] = useState(false);
   const [width, setWidth] = useState();
   useEffect(() => {
     setWidth(window.innerWidth);
+    setPreLoad(true);
+    setTimeout(() => {
+      setPreLoad(false);
+    }, 3500);
   }, []);
 
-  return (
-    <div className="">
-      <RecoilRoot>
-        <Navbar />
-        {width < 500 && <HamMenuHandle />}
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path={"/"} element={<Homepage />} />
-          <Route path="/blogs/:blogId" element={<ReadBlogs />} />
-          <Route path="/discover" element={<Discover />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/discussion" element={<Discussion />} />
-          <Route path="/opportunities" element={<Opportunities />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/post" index element={<Post />} />
-          <Route element={<Protected />}>
-            <Route path="/post/blogs" element={<PostBlog />} />
-            <Route path="/post/news" element={<PostNews />} />
-            <Route path="/post/education" element={<PostEducation />} />
-            <Route path="/post/research" element={<PostResearch />} />
-          </Route>
-        </Routes>
-        <Footer />
-      </RecoilRoot>
-    </div>
-  );
+  if (preLoad) {
+    return <PreLoader />;
+  } else {
+    return (
+      <div className="">
+        <RecoilRoot>
+          <Navbar />
+          {width < 500 && <HamMenuHandle />}
+          <Routes>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path={"/"} element={<Homepage />} />
+            <Route path="/blogs/:blogId" element={<ReadBlogs />} />
+            <Route path="/discover" element={<Discover />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/discussion" element={<Discussion />} />
+            <Route path="/opportunities" element={<Opportunities />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/post" element={<Post />} />
+            <Route element={<Protected />}>
+              <Route path="/post/blogs" element={<PostBlog />} />
+              <Route path="/post/news" element={<PostNews />} />
+              <Route path="/post/education" element={<PostEducation />} />
+              <Route path="/post/research" element={<PostResearch />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </RecoilRoot>
+      </div>
+    );
+  }
 }
 
 export default App;
