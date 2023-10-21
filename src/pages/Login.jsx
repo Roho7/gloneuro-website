@@ -26,7 +26,7 @@ function Login() {
             // Signed in
             const user = userCredential.user;
             if (user.uid) {
-              cookies.set("username", user);
+              cookies.set("username", user.email);
               navigate("/");
             } else {
               alert("Invalid User");

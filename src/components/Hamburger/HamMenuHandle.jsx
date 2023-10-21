@@ -14,34 +14,40 @@ function HamMenuHandle() {
       >
         <Menu />
       </button>
-      {toggle && <HamMenuItems />}
+      {toggle && <HamMenuItems toggle={setToggle} />}
     </div>
   );
 }
-const HamMenuItems = () => {
+const HamMenuItems = ({ toggle }) => {
   const navigate = useNavigate();
   return (
-    <motion.div
-      className="fixed h-screen w-1/2 top-0 left-0 z-50 glass p-4"
-      initial={{ x: -100 }}
-      animate={{ x: 0 }}
-    >
-      <ul className="text-white">
-        {navbardata.Navbar.map((item, index) => {
-          return (
-            <li
-              key={index}
-              className="text-xl cursor-pointer hover:text-base-50"
-              onClick={() =>
-                navigate(`/${item.title === "Home" ? "" : item.title}`)
-              }
-            >
-              {item.title}
-            </li>
-          );
-        })}
-      </ul>
-    </motion.div>
+    <>
+      <motion.div
+        className="fixed h-screen w-1/2 top-0 left-0 z-50 glass p-4"
+        initial={{ x: -100 }}
+        animate={{ x: 0 }}
+      >
+        <ul className="text-white">
+          {navbardata.Navbar.map((item, index) => {
+            return (
+              <li
+                key={index}
+                className="text-xl cursor-pointer hover:text-base-50"
+                onClick={() =>
+                  navigate(`/${item.title === "Home" ? "" : item.title}`)
+                }
+              >
+                {item.title}
+              </li>
+            );
+          })}
+        </ul>
+      </motion.div>
+      <div
+        className="fixed h-screen w-screen bg-base-300 z-[49] opacity-50"
+        onClick={() => toggle(false)}
+      ></div>
+    </>
   );
 };
 export default HamMenuHandle;

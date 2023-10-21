@@ -27,9 +27,9 @@ function Footer() {
   return (
     <div className="relative w-full h-full bg-base-500 p-16 grid grid-cols-2 gap-4 z-50">
       <div className="flex flex-col">
-        <a href="/home">Home</a>
+        <a href="/">Home</a>
         <a href="/about">About Us</a>
-        <a href="/opportuniies">Opportunities</a>
+        <a href="/opportunities">Opportunities</a>
         <a href="/explore">Explore</a>
         <a href="/discussion">Discussion</a>
       </div>

@@ -2,12 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../server/firebase";
 import { useEffect, useState } from "react";
+import Cookies from "universal-cookie";
 
 function Discussion() {
   const [currentUser, setCurrentUser] = useState();
-  const navigate = useNavigate();
+  const cookies = new Cookies();
 
   const handleSignOut = () => {
+    cookies.remove("username");
     signOut(auth);
     location.reload();
   };

@@ -11,7 +11,7 @@ const imgs = [
 
 function Explore() {
   return (
-    <div>
+    <div className="min-h-screen">
       <div
         style={{
           backgroundPosition: "center",

@@ -1,23 +1,31 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { auth } from "../server/firebase";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import Cookies from "universal-cookie";
+import { Loading } from "../config/atoms";
+import Loader from "../components/Loader";
 
 const Protected = () => {
+  const setLoading = useSetRecoilState(Loading);
+  const loading = useRecoilValue(Loading);
+
   const [user, setUser] = useState();
-  const auth = getAuth();
+  const cookies = new Cookies(null, { path: "/" });
+
+  const username = cookies.get("username");
+  const checkUser = async () => {
+    console.log(username);
+    if (username) {
+      setUser(username);
+    } else {
+      setUser();
+    }
+  };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (userd) => {
-      if (userd) {
-        setUser(userd.displayName);
-      } else {
-      }
-    });
-  });
-  console.log(user);
-
-  return user ? <Outlet /> : <Navigate to="/login" />;
+    checkUser();
+  }, []);
+  return username ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default Protected;

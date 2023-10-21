@@ -42,10 +42,12 @@ function App() {
           <Route path="/opportunities" element={<Opportunities />} />
           <Route path="/about" element={<About />} />
           <Route path="/post" index element={<Post />} />
-          <Route path="/post/blogs" element={<PostBlog />} />
-          <Route path="/post/news" element={<PostNews />} />
-          <Route path="/post/education" element={<PostEducation />} />
-          <Route path="/post/research" element={<PostResearch />} />
+          <Route element={<Protected />}>
+            <Route path="/post/blogs" element={<PostBlog />} />
+            <Route path="/post/news" element={<PostNews />} />
+            <Route path="/post/education" element={<PostEducation />} />
+            <Route path="/post/research" element={<PostResearch />} />
+          </Route>
         </Routes>
         <Footer />
       </RecoilRoot>
