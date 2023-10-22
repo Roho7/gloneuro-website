@@ -3,6 +3,7 @@ import LatestBlog from "./HeroLatestBlog";
 import HeroPodcast from "./HeroPodcast";
 import { ArrowRight, ArrowUpRight, Bookmark } from "react-feather";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
   return (
@@ -19,6 +20,7 @@ function Hero() {
 }
 
 const HeroTop = () => {
+  const navigate = useNavigate();
   return (
     <motion.div
       className="hero-top p-4 w-full bg-hero-img bg-cover text-white col-span-2 row-span-3 lg:row-span-2 rounded-2xl"
@@ -31,7 +33,12 @@ const HeroTop = () => {
         <h1 className="text-6xl lg:text-8xl ">GloNeuro</h1>
         <p className=" text-2xl">Inspiring Brains to Understand the Brain</p>
       </div>
-      <button className="relative flex gap-2 z-10 rounded-full bg-salmon-500 px-4 py-2 text-salmon-100 font-bold">
+      <button
+        onClick={() => {
+          navigate("/about");
+        }}
+        className="relative flex gap-2 z-10 rounded-full bg-salmon-500 px-4 py-2 text-salmon-100 font-bold"
+      >
         Learn more <ArrowRight />
       </button>
     </motion.div>
@@ -55,13 +62,11 @@ const HeroBanner = () => {
 };
 
 const HeroDiscover = () => {
-  const handleCategoryScroll = () => {
-    document.querySelector("#categories").scrollIntoView();
-  };
+  const navigate = useNavigate();
   return (
     <motion.div
       className="w-full h-full p-4 rounded-2xl bg-widget-img bg-[size:100%] hover:bg-[size:105%] transition-all ease-linear"
-      onClick={handleCategoryScroll}
+      onClick={() => navigate("/discover")}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.5, type: "spring" }}

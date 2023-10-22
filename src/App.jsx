@@ -29,7 +29,7 @@ function App() {
     setPreLoad(true);
     setTimeout(() => {
       setPreLoad(false);
-    }, 2500);
+    }, 3000);
   }, []);
 
   return (

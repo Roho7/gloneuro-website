@@ -4,7 +4,7 @@ function PreLoader() {
   return (
     <motion.div
       className=" flex max-md:flex-col gap-0 items-center justify-center absolute h-screen w-screen z-[99] bg-base-800 overflow-clip"
-      transition={{ delay: 3 }}
+      transition={{ delay: 2 }}
       initial={{ scale: 1, originX: 0, originY: 0 }}
       animate={{ scale: 0.2, x1: 0, y1: 0, opacity: 0 }}
     >
