@@ -82,5 +82,5 @@ button {
 }
 
 .inner-page-hero-text {
-  @apply absolute my-10 text-6xl lg:text-8xl text-egg-100 bottom-0 drop-shadow-lg;
+  @apply absolute my-10 text-4xl lg:text-8xl text-egg-100 bottom-0 drop-shadow-lg;
 }

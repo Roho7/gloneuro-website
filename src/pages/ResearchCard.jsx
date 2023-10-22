@@ -3,7 +3,7 @@ import React from "react";
 function ResearchCard(props) {
   const data = props.data;
   return (
-    <div className="glass bg-base-100 w-72 p-4 rounded-xl text-base-100">
+    <div className="glass bg-base-100 w-96 h-full p-4 rounded-xl text-base-100">
       <h1 className="text-base-50">{data?.heading}</h1>
       <div className="flex gap-4">
         <div>

@@ -64,7 +64,7 @@ function PreLoader() {
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
           transition={{
-            duration: 50,
+            duration: 10,
             ease: "easeInOut",
             repeat: Infinity,
             repeatType: "reverse",
