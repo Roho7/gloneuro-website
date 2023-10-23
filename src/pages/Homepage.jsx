@@ -6,10 +6,12 @@ import Footer from "../components/Footer";
 import QuoteComponent from "../components/Homepage/QuoteComponent";
 import StatsSection from "../components/Homepage/StatsSection";
 import { motion } from "framer-motion";
+import PreLoader from "../components/Animation/PreLoader";
 
 function Homepage() {
   return (
     <div className="">
+      <PreLoader />
       <div className="p-4 relative z-[1]">
         <Hero />
         <br />

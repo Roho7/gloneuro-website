@@ -6,7 +6,6 @@ import Cookies from "universal-cookie";
 
 function Footer() {
   const [currentUser, setCurrentUser] = useState();
-  const navigate = useNavigate();
   const cookies = new Cookies();
 
   const handleSignOut = () => {
@@ -25,7 +24,7 @@ function Footer() {
     });
   }, []);
   return (
-    <div className="relative w-full h-full bg-base-500 p-16 grid grid-cols-2 gap-4 z-50">
+    <div className="relative w-full h-full bg-base-500 p-16 grid grid-cols-2 gap-4 z-[48]">
       <div className="flex flex-col">
         <a href="/">Home</a>
         <a href="/about">About Us</a>

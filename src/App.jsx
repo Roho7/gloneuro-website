@@ -22,14 +22,9 @@ import Protected from "./components/PrivateRoute";
 import PreLoader from "./components/Animation/PreLoader";
 
 function App() {
-  const [preLoad, setPreLoad] = useState(false);
   const [width, setWidth] = useState();
   useEffect(() => {
     setWidth(window.innerWidth);
-    setPreLoad(true);
-    setTimeout(() => {
-      setPreLoad(false);
-    }, 3000);
   }, []);
 
   return (
@@ -40,7 +35,7 @@ function App() {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path={"/"} element={preLoad ? <PreLoader /> : <Homepage />} />
+          <Route path={"/"} element={<Homepage />} />
           <Route path="/blogs/:blogId" element={<ReadBlogs />} />
           <Route path="/discover" element={<Discover />} />
           <Route path="/explore" element={<Explore />} />
