@@ -13,7 +13,8 @@ function Homepage() {
     <div className="">
       <div className="p-4 relative z-[1]">
         <PreLoader />
-        <div className="h-screen w-screen"></div>
+        {/* <div className="h-screen w-full"></div> */}
+        <br />
         <Hero />
         <br />
         <QuoteComponent />

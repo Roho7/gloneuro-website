@@ -1,26 +1,51 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import { ChevronDown } from "react-feather";
 
 function PreLoader() {
   const { scrollYProgress } = useScroll();
-  const opacityValue = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const xValue = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
-  const yValue = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
+  const opacityValue = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const yValue = useTransform(scrollYProgress, [0, 0.2], [0, -300]);
+  const yValue2 = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
+  const scaleValue = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
     <motion.div
-      className="fixed flex flex-col max-md:flex-col items-center justify-center h-screen overflow-clip"
-      // transition={{ delay: 2 }}
-      style={{ opacity: opacityValue, x: xValue, y: yValue }}
+      className="relative h-full max-md:h-[95vh] flex flex-col items-center glass bg-base-500 text-base-50  rounded-3xl p-2"
+      style={{ opacity: opacityValue, y: yValue }}
     >
       <motion.div
-        className="w-[80vw] h-[80vh]"
+        className="flex flex-col h-[80vh] w-[80vw] items-center justify-center rounded-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
+        style={{ y: yValue2, scale: scaleValue, opacity: opacityValue }}
       >
-        <img src="src/assets/Group 8.png" className="object-contain" alt="" />
+        <img
+          src="src/assets/Group 8.png"
+          className="object-contain lg:w-1/2"
+          alt=""
+        />
+        <motion.h1
+          className="text-center text-xl lg:text-4xl"
+          transition={{ delay: 3 }}
+        >
+          Inspiring Brains to study the Brain
+        </motion.h1>
+        <motion.div className="fixed bottom-10 flex flex-col items-center opacity-30">
+          <h3>Scroll Down</h3>
+          <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: 10 }}
+            transition={{
+              repeat: Infinity,
+              repeatDelay: 2,
+              repeatType: "reverse",
+            }}
+          >
+            <ChevronDown />
+          </motion.div>
+        </motion.div>
       </motion.div>
-      <h1 className="text-base-50">Inspiring Brains to study the brain</h1>
       {/* <motion.svg
         width="400"
         height="368"
