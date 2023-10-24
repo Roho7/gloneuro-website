@@ -1,21 +1,26 @@
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 function PreLoader() {
-  const { scrollY } = useScroll();
+  const { scrollYProgress } = useScroll();
+  const opacityValue = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const xValue = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
+  const yValue = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
 
   return (
     <motion.div
-      className=" flex max-md:flex-col gap-0 items-center justify-center h-1/2 w-screen z-[99] bg-base-800 overflow-clip"
+      className="fixed flex flex-col max-md:flex-col items-center justify-center h-screen overflow-clip"
       // transition={{ delay: 2 }}
-      style={{ x: scrollY }}
+      style={{ opacity: opacityValue, x: xValue, y: yValue }}
     >
-      <div className="w-1/2 h-1/2">
-        <img
-          src="src/assets/glonuro-og-logo.png"
-          className="object-contain"
-          alt=""
-        />
-      </div>
+      <motion.div
+        className="w-[80vw] h-[80vh]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
+        <img src="src/assets/Group 8.png" className="object-contain" alt="" />
+      </motion.div>
+      <h1 className="text-base-50">Inspiring Brains to study the brain</h1>
       {/* <motion.svg
         width="400"
         height="368"
