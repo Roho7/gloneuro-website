@@ -42,7 +42,7 @@ function ReadBlogs() {
     return <Loader />;
   } else {
     return (
-      <div className="p-4 w-full">
+      <div className="page-container">
         <div
           className="relative w-full lg:h-[40vh] mb-4 p-4 flex flex-col justify-between rounded-xl"
           style={{
@@ -58,7 +58,7 @@ function ReadBlogs() {
               {activeBlog.cat1 && <p className="tag"> {activeBlog.cat1} </p>}
               {activeBlog.cat2 && <p className="tag"> {activeBlog.cat2} </p>}
             </div>
-            <h1 className="text-5xl lg:text-8xl text-white">
+            <h1 className="text-5xl lg:text-6xl text-white">
               {activeBlog.title}
             </h1>
           </div>

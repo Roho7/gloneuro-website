@@ -35,7 +35,7 @@ function App() {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path={"/"} element={<Homepage />} />
+          <Route path={"/"} element={<Homepage width={width} />} />
           <Route path="/blogs/:blogId" element={<ReadBlogs />} />
           <Route path="/discover" element={<Discover />} />
           <Route path="/explore" element={<Explore />} />

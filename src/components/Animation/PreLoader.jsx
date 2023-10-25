@@ -20,7 +20,7 @@ function PreLoader() {
         transition={{ duration: 2 }}
         style={{ y: yValue2, scale: scaleValue, opacity: opacityValue }}
       >
-        <div className="flex gap-2 items-center">
+        <div className="flex max-md:flex-col gap-2 items-center">
           <motion.img
             src="src/assets/logo-3.png"
             className="object-contain lg:w-1/2"
@@ -30,7 +30,7 @@ function PreLoader() {
           />
 
           <motion.h1
-            className="text-center text-xl lg:text-8xl"
+            className="text-center text-4xl lg:text-8xl"
             initial={{ opacity: 0, x: -200 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 2 }}

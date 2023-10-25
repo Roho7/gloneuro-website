@@ -22,7 +22,7 @@ function Explore() {
       >
         <h1 className="inner-page-hero-text">Explore</h1>
       </div>
-      <div className="p-4">
+      <div className="page-container">
         <h1 className=" text-4xl text-base-50">Posters</h1>
         <div className="w-screen grid grid-flow-col gap-2 items-start overflow-scroll">
           {imgs.map((item, index) => {

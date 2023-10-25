@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../server/firebase";
 import { useEffect, useState } from "react";
@@ -35,7 +34,7 @@ function Discussion() {
       >
         <h1 className="inner-page-hero-text">Discussion</h1>
       </div>
-      <div className="p-4">
+      <div className="page-container">
         <h1 className="text-4xl text-base-50">Upcoming GloNeuro Talks</h1>
         <h1 className="text-4xl text-base-50">All GloNeuro Talks</h1>
         <h1 className="text-4xl text-base-50">Socials</h1>

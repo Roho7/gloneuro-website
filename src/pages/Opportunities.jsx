@@ -40,19 +40,21 @@ function Opportunities() {
       >
         <h1 className="inner-page-hero-text">Opportunities</h1>
       </div>
-      <h1 className="p-4 text-4xl text-base-50">Education And Training</h1>
-      <div className="p-4 grid grid-rows-1 grid-flow-col gap-2 overflow-auto">
-        {eduData.map((item, index) => {
-          return <EducationCard data={item} key={index} />;
-        })}
+      <div className="page-container">
+        <h1 className="text-4xl text-base-50">Education And Training</h1>
+        <div className="grid grid-rows-1 grid-flow-col gap-2 overflow-auto">
+          {eduData.map((item, index) => {
+            return <EducationCard data={item} key={index} />;
+          })}
+        </div>
+        <h1 className="text-4xl text-base-50">Research</h1>
+        <div className="grid grid-rows-1 grid-flow-col gap-2 overflow-auto">
+          {resData.map((item, index) => {
+            return <ResearchCard data={item} key={index} />;
+          })}
+        </div>
+        <h1 className="text-4xl text-base-50">Upcoming Conferences</h1>
       </div>
-      <h1 className="p-4 text-4xl text-base-50">Research</h1>
-      <div className="p-4 grid grid-rows-1 grid-flow-col gap-2 overflow-auto">
-        {resData.map((item, index) => {
-          return <ResearchCard data={item} key={index} />;
-        })}
-      </div>
-      <h1 className="p-4 text-4xl text-base-50">Upcoming Conferences</h1>
     </div>
   );
 }

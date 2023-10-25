@@ -2,7 +2,8 @@ import { navbardata } from "../data/navbardata";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
-import { User, UserPlus } from "react-feather";
+import { User } from "react-feather";
+import { motion } from "framer-motion";
 
 function Navbar() {
   const [user, setUser] = useState();

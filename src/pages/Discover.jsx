@@ -3,7 +3,7 @@ import Catagories from "../components/Blog/Catagories";
 
 function Discover() {
   return (
-    <div className="h-full">
+    <div className=" h-full">
       <div
         style={{
           backgroundPosition: "center",
@@ -14,7 +14,7 @@ function Discover() {
       >
         <h1 className="inner-page-hero-text">Discover</h1>
       </div>
-      <div className="p-4">
+      <div className="page-container">
         <h1 className="text-4xl text-base-50">Discover Blogs</h1>
         <Catagories />
         <h1 className="my-10 text-4xl text-base-50">Discover Podcasts</h1>

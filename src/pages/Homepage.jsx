@@ -8,13 +8,13 @@ import StatsSection from "../components/Homepage/StatsSection";
 import { motion } from "framer-motion";
 import PreLoader from "../components/Animation/PreLoader";
 
-function Homepage() {
+function Homepage(props) {
+  const width = props.width;
   return (
     <div className="">
       <div className=" p-4 lg:px-32 relative z-[1] flex flex-col gap-16 mb-16">
         <PreLoader />
-        {/* <div className="h-screen w-full"></div> */}
-        <Hero />
+        <Hero width={width} />
         <QuoteComponent />
         <LatestNews />
         <ArticleCarousel />

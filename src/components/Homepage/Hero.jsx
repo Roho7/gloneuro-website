@@ -5,14 +5,15 @@ import { ArrowRight, ArrowUpRight, Bookmark } from "react-feather";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-function Hero() {
+function Hero(props) {
+  const width = props.width;
   return (
-    <div className="relative lg:h-screen grid lg:grid-flow-row-dense grid-cols-1 grid-rows-5 lg:grid-cols-3 lg:grid-rows-3 gap-4">
+    <div className="relative lg:h-screen grid lg:grid-flow-row-dense grid-cols-1 grid-rows-5 lg:grid-cols-3 lg:grid-rows-3 gap-4 ">
       <HeroTop />
-      <div className="flex flex-col row-span-3 gap-4">
+      <div className="flex lg:flex-col row-span-2 gap-4">
         <LatestBlog />
         <HeroPodcast />
-        <HeroDiscover />
+        {width > 500 && <HeroDiscover />}
       </div>
       <HeroBanner />
     </div>
@@ -30,8 +31,8 @@ const HeroTop = () => {
       transition={{ duration: 0.5, type: "spring", delay: 0.2 }}
     >
       <div className="mb-4 relative z-10">
-        <h1 className="text-6xl lg:text-8xl ">GloNeuro</h1>
-        <p className=" text-2xl">Inspiring Brains to Understand the Brain</p>
+        <h1 className="text-6xl lg:text-8xl">GloNeuro</h1>
+        <p className="text-2xl">Inspiring Brains to Understand the Brain</p>
       </div>
       <button
         onClick={() => {
@@ -47,7 +48,7 @@ const HeroTop = () => {
 const HeroBanner = () => {
   return (
     <motion.div
-      className="p-4 glass bg-salmon-500 text-salmon-100 col-span-2 rounded-2xl flex flex-col gap-2 justify-center"
+      className="group p-4 glass bg-salmon-500 text-salmon-100 col-span-2 rounded-2xl flex flex-col gap-2 justify-center"
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3, type: "spring" }}
@@ -55,7 +56,8 @@ const HeroBanner = () => {
       <Bookmark />
       <h1>Discover 100+ Neuroscience Articles</h1>
       <span>
-        Discover Blogs <ArrowUpRight />
+        Discover Blogs{" "}
+        <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-all ease-linear" />
       </span>
     </motion.div>
   );
