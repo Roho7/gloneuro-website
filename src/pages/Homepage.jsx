@@ -11,22 +11,15 @@ import PreLoader from "../components/Animation/PreLoader";
 function Homepage() {
   return (
     <div className="">
-      <div className="p-4 relative z-[1]">
+      <div className=" p-4 lg:px-32 relative z-[1] flex flex-col gap-16 mb-16">
         <PreLoader />
         {/* <div className="h-screen w-full"></div> */}
-        <br />
         <Hero />
-        <br />
         <QuoteComponent />
-        <br />
         <LatestNews />
-        <br />
         <ArticleCarousel />
-        <br />
         <Catagories />
-        <br />
         <StatsSection />
-        <br />
       </div>
       <motion.svg
         style={{ width: "100%", height: "100%" }}

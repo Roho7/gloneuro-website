@@ -26,8 +26,8 @@ const HeroTop = () => {
       className="hero-top p-4 w-full bg-hero-img bg-cover text-white col-span-2 row-span-3 lg:row-span-2 rounded-2xl"
       style={{ backgroundPosition: "center" }}
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, type: "spring" }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, type: "spring", delay: 0.2 }}
     >
       <div className="mb-4 relative z-10">
         <h1 className="text-6xl lg:text-8xl ">GloNeuro</h1>
@@ -49,7 +49,7 @@ const HeroBanner = () => {
     <motion.div
       className="p-4 glass bg-salmon-500 text-salmon-100 col-span-2 rounded-2xl flex flex-col gap-2 justify-center"
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3, type: "spring" }}
     >
       <Bookmark />
@@ -68,7 +68,7 @@ const HeroDiscover = () => {
       className="w-full h-full p-4 rounded-2xl bg-widget-img bg-[size:100%] hover:bg-[size:105%] transition-all ease-linear"
       onClick={() => navigate("/discover")}
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.5, type: "spring" }}
     >
       <p className="text-4xl text-white">See all Categories</p>

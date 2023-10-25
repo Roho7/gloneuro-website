@@ -28,7 +28,9 @@ span {
 input {
   @apply p-2 rounded-md;
 }
-
+.break {
+  @apply my-32;
+}
 a {
   @apply cursor-pointer text-base-50 hover:text-base-100;
 }

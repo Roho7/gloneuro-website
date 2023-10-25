@@ -6,7 +6,7 @@ function HeroPodcast() {
     <motion.div
       className="group glass p-4 bg-salmon-300 text-salmon-100 rounded-xl object-cover cursor-pointer"
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
     >
       <h2 className="font-light">Latest Podcast</h2>

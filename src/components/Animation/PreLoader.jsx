@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown } from "react-feather";
+import { ChevronUp } from "react-feather";
 
 function PreLoader() {
   const { scrollYProgress } = useScroll();
@@ -20,19 +20,31 @@ function PreLoader() {
         transition={{ duration: 2 }}
         style={{ y: yValue2, scale: scaleValue, opacity: opacityValue }}
       >
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/gloneuro-website.appspot.com/o/logo-2.png?alt=media&token=e632f727-de1d-49e0-b909-581f6e12985d&_gl=1*1twhpna*_ga*MjExOTg3NjYzMi4xNjk0MzMzMTIx*_ga_CW55HF8NVT*MTY5ODE3NjU5MC42Ny4xLjE2OTgxNzY2NTUuNjAuMC4w"
-          className="object-contain lg:w-1/2"
-          alt=""
-        />
+        <div className="flex gap-2 items-center">
+          <motion.img
+            src="src/assets/logo-3.png"
+            className="object-contain lg:w-1/2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 2 }}
+          />
+
+          <motion.h1
+            className="text-center text-xl lg:text-8xl"
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1, duration: 2 }}
+          >
+            GloNeuro
+          </motion.h1>
+        </div>
         <motion.h1
-          className="text-center text-xl lg:text-4xl"
+          className="text-center text-xl lg:text-3xl"
           transition={{ delay: 3 }}
         >
           Inspiring Brains to study the Brain
         </motion.h1>
-        <motion.div className="fixed bottom-10 flex flex-col items-center opacity-30">
-          <h3>Scroll Down</h3>
+        <motion.div className="fixed bottom-2 flex flex-col items-center opacity-30">
           <motion.div
             initial={{ y: 0 }}
             animate={{ y: 10 }}
@@ -42,8 +54,9 @@ function PreLoader() {
               repeatType: "reverse",
             }}
           >
-            <ChevronDown />
+            <ChevronUp />
           </motion.div>
+          <h3>Scroll up</h3>
         </motion.div>
       </motion.div>
       {/* <motion.svg
