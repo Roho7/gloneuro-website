@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { db } from "../server/firebase";
 import { Timestamp, doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 function PostResearch() {
   const [newsData, setNewsData] = useState({
@@ -11,11 +12,12 @@ function PostResearch() {
     deadline: "",
     link: "",
   });
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setNewsData({ ...newsData, [e.target.name]: e.target.value });
   };
   const handleSubmit = async () => {
-    if (newsData.description === "" || newsData.heading === "") {
+    if (newsData.deadline === "" || newsData.heading === "") {
       alert("Please enter valid details");
     } else {
       const date = Date.now();
@@ -30,6 +32,7 @@ function PostResearch() {
           date: Timestamp.fromDate(new Date(date)),
         });
         alert("Posted succesfully");
+        navigate("/opportunities");
       } catch (err) {
         console.log(err);
       }

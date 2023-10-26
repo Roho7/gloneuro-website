@@ -30,7 +30,7 @@ function PreLoader() {
           />
 
           <motion.h1
-            className="text-center text-4xl lg:text-8xl"
+            className="text-center text-4xl lg:text-8xl drop-shadow-glow"
             initial={{ opacity: 0, x: -200 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 2 }}

@@ -36,7 +36,7 @@ a {
 }
 
 button {
-  @apply p-2 rounded-md bg-pale-100 hover:bg-base-50;
+  @apply p-2 rounded-md bg-pale-100;
 }
 .nav-title {
   @apply cursor-pointer relative text-white hover:text-base-50 font-semibold;

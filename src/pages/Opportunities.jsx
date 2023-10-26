@@ -42,17 +42,19 @@ function Opportunities() {
       </div>
       <div className="page-container">
         <h1 className="text-4xl text-base-50">Education And Training</h1>
-        <div className="grid grid-rows-1 grid-flow-col gap-2 overflow-auto">
+        <div className="grid grid-rows-1 grid-flow-col gap-4 overflow-auto">
           {eduData.map((item, index) => {
             return <EducationCard data={item} key={index} />;
           })}
         </div>
+        <br />
         <h1 className="text-4xl text-base-50">Research</h1>
         <div className="grid grid-rows-1 grid-flow-col gap-2 overflow-auto">
           {resData.map((item, index) => {
             return <ResearchCard data={item} key={index} />;
           })}
         </div>
+        <br />
         <h1 className="text-4xl text-base-50">Upcoming Conferences</h1>
       </div>
     </div>

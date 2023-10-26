@@ -38,7 +38,7 @@ const HeroTop = () => {
         onClick={() => {
           navigate("/about");
         }}
-        className="relative flex gap-2 z-10 rounded-full bg-salmon-500 px-4 py-2 text-salmon-100 font-bold"
+        className="relative flex gap-2 hover:gap-4 z-10 rounded-full bg-salmon-500 px-4 py-2 text-salmon-100 font-bold transition-all ease-linear"
       >
         Learn more <ArrowRight />
       </button>

@@ -6,6 +6,9 @@ export default {
       clean: "General Sans', sans-serif;",
     },
     extend: {
+      dropShadow: {
+        glow: "0 0 25px rgba(252, 196, 241, 0.5)",
+      },
       colors: {
         salmon: {
           100: "#FCC4F1",

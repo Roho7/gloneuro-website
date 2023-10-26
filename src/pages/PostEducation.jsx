@@ -17,7 +17,7 @@ function PostEducation() {
     setNewsData({ ...newsData, [e.target.name]: e.target.value });
   };
   const handleSubmit = async () => {
-    if (newsData.description === "" || newsData.heading === "") {
+    if (newsData.id === "" || newsData.heading === "") {
       alert("Please enter valid details");
     } else {
       const date = Date.now();
