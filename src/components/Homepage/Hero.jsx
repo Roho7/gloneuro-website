@@ -1,18 +1,20 @@
 import React from "react";
-import LatestBlog from "./HeroLatestBlog";
 import HeroPodcast from "./HeroPodcast";
 import { ArrowRight, ArrowUpRight, Bookmark } from "react-feather";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import HeroBlog from "./HeroLatestBlog";
+import HeroNews from "./HeroNews";
 
 function Hero(props) {
   const width = props.width;
   return (
     <div className="relative lg:h-screen grid lg:grid-flow-row-dense grid-cols-1 grid-rows-5 lg:grid-cols-3 lg:grid-rows-3 gap-4 ">
       <HeroTop />
-      <div className="flex lg:flex-col row-span-2 gap-4">
-        <LatestBlog />
+      <div className="flex flex-col row-span-3 gap-4">
+        <HeroBlog />
         <HeroPodcast />
+        <HeroNews />
         {width > 500 && <HeroDiscover />}
       </div>
       <HeroBanner />

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
 import { User } from "react-feather";
-import { motion } from "framer-motion";
 
 function Navbar() {
   const [user, setUser] = useState();
@@ -18,11 +17,7 @@ function Navbar() {
   });
   return (
     <header className="max-sm:hidden glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/gloneuro-website.appspot.com/o/logo-2.png?alt=media&token=e632f727-de1d-49e0-b909-581f6e12985d&_gl=1*1twhpna*_ga*MjExOTg3NjYzMi4xNjk0MzMzMTIx*_ga_CW55HF8NVT*MTY5ODE3NjU5MC42Ny4xLjE2OTgxNzY2NTUuNjAuMC4w"
-        alt=""
-        className="w-32 object-cover"
-      />
+      <img src="/assets/logo-1.png" alt="" className="w-32 object-cover" />
       <div className="flex gap-4 ">
         {navbardata.Navbar.map((item, index) => {
           return (

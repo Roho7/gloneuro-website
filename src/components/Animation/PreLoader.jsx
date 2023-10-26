@@ -4,9 +4,11 @@ import { ChevronUp } from "react-feather";
 function PreLoader() {
   const { scrollYProgress } = useScroll();
   const opacityValue = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
-  const yValue = useTransform(scrollYProgress, [0, 0.2], [0, -300]);
-  const yValue2 = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
-  const scaleValue = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const yValue = useTransform(scrollYProgress, [0, 0.4], [0, -300]);
+  const yValue2 = useTransform(scrollYProgress, [0, 0.4], [0, -50]);
+  const xValue = useTransform(scrollYProgress, [0, 0.4], [0, -1000]);
+  const xValue2 = useTransform(scrollYProgress, [0, 0.4], [0, 1000]);
+  const scaleValue = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   return (
     <motion.div
@@ -18,15 +20,20 @@ function PreLoader() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
-        style={{ y: yValue2, scale: scaleValue, opacity: opacityValue }}
+        style={{
+          y: yValue2,
+          scale: scaleValue,
+          opacity: opacityValue,
+        }}
       >
         <div className="flex max-md:flex-col gap-2 items-center">
           <motion.img
-            src="src/assets/logo-3.png"
+            src="/assets/logo-3.png"
             className="object-contain lg:w-1/2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 2 }}
+            style={{ x: xValue }}
           />
 
           <motion.h1
@@ -34,6 +41,7 @@ function PreLoader() {
             initial={{ opacity: 0, x: -200 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 2 }}
+            style={{ x: xValue2 }}
           >
             GloNeuro
           </motion.h1>
@@ -41,6 +49,7 @@ function PreLoader() {
         <motion.h1
           className="text-center text-xl lg:text-3xl"
           transition={{ delay: 3 }}
+          style={{ y: yValue2 }}
         >
           Inspiring Brains to study the Brain
         </motion.h1>

@@ -66,7 +66,7 @@ function ReadBlogs() {
         </div>
         <p className="text-base-100 italic"> by {activeBlog.author} </p>
         <p className="text-base-100 italic"> {blogDate} </p>
-        <div id="content" className=" my-4 p-6 rounded-xl bg-egg-100"></div>
+        <div id="content" className=" my-4 p-8 rounded-xl bg-egg-100"></div>
       </div>
     );
   }

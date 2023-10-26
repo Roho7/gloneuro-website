@@ -2,7 +2,6 @@ import { useState } from "react";
 import { db } from "../server/firebase";
 import { Timestamp, doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { navbardata } from "../data/navbardata";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { categories } from "../data/categoryData";
@@ -52,8 +51,6 @@ function PostBlog() {
   };
   return (
     <div className="w-full p-4">
-      <div className="bg-red-200">{blogContent}</div>
-
       <h1 className="my-4 text-base-50  ">Add a blog</h1>
       <div className="flex flex-col gap-4">
         <input
@@ -108,7 +105,7 @@ function PostBlog() {
           theme="snow"
           value={blogContent}
           onChange={setBlogContent}
-          className="w-full h-[80vh] mb-10 bg-egg-100 text-base-500"
+          className="w-full h-[100vh] mb-10 bg-egg-100 text-base-500"
           modules={modules}
         />
       </div>
