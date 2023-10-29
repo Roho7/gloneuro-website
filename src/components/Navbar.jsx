@@ -3,11 +3,21 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
 import { User } from "react-feather";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 function Navbar() {
   const [user, setUser] = useState();
+  const [hidden, setHidden] = useState(false);
   const auth = getAuth();
-
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const prev = scrollY.getPrevious();
+    if (latest > prev && latest > 500) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const userEmail = user.email;
@@ -16,8 +26,22 @@ function Navbar() {
     }
   });
   return (
-    <header className="max-sm:hidden glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50">
-      <img src="/assets/logo-1.png" alt="" className="w-32 object-cover" />
+    <motion.header
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      className="max-sm:hidden glass bg-base-100 w-full flex justify-between items-center p-4 sticky top-0 z-50"
+    >
+      <div className="flex text-base-50 items-center">
+        <img
+          src="/assets/glonuro-og-logo.png"
+          alt=""
+          className="h-10 object-contain"
+        />
+        <h2>Gloneuro</h2>
+      </div>
       <div className="flex gap-4 ">
         {navbardata.Navbar.map((item, index) => {
           return (
@@ -33,7 +57,7 @@ function Navbar() {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 }
 function NavElement({ title, content }) {
