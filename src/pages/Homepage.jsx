@@ -2,7 +2,6 @@ import Hero from "../components/Homepage/Hero";
 import LatestNews from "../components/Homepage/LatestNews";
 import ArticleCarousel from "../components/Homepage/ArticleCarousel";
 import Catagories from "../components/Blog/Catagories";
-import Footer from "../components/Footer";
 import QuoteComponent from "../components/Homepage/QuoteComponent";
 import StatsSection from "../components/Homepage/StatsSection";
 import { motion } from "framer-motion";
@@ -44,7 +43,7 @@ function Homepage(props) {
           strokeDasharray="0 1"
         />
       </motion.svg>
-      <div className="absolute top-[40vh] z-[0] right-0 max-md:w-[200vw]">
+      <div className="absolute top-[20vh] lg:top-[40vh] z-[0] right-0 max-md:w-[200vw]">
         <motion.img
           initial={{ opacity: 1 }}
           animate={{ opacity: 0.4 }}
@@ -58,7 +57,7 @@ function Homepage(props) {
           alt=""
         />
       </div>
-      <div className="absolute top-[200vh] max-md:w-[200vw]">
+      <div className="absolute top-[200vh]">
         <img
           src="https://firebasestorage.googleapis.com/v0/b/gloneuro-website.appspot.com/o/bg-blob-2.png?alt=media&token=9790f5cd-6e0c-4a8a-98eb-8a158e1736d3&_gl=1*1siop9p*_ga*MjExOTg3NjYzMi4xNjk0MzMzMTIx*_ga_CW55HF8NVT*MTY5NzM0NzcxNy40Ny4xLjE2OTczNDkzNjQuNjAuMC4w"
           alt=""

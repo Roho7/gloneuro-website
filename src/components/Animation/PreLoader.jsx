@@ -9,35 +9,31 @@ function PreLoader() {
   const scaleValue = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <motion.div
-      className="relative h-full max-md:h-[95vh] flex flex-col items-center text-base-50  rounded-3xl p-2"
-      style={{ opacity: opacityValue, y: yValue }}
-    >
+    <div className="h-screen max-md:h-[95vh] flex flex-col items-center text-base-50 rounded-3xl p-2 overflow-x-clip">
       <div className="flex flex-col h-[80vh] w-[80vw] items-center justify-center rounded-xl">
         <motion.div
-          className="flex max-md:flex-col gap-2 items-center justify-center"
+          className="flex max-md:flex-col items-center justify-center w-screen"
           initial={{ opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 1, duration: 2 }}
           style={{ x: xValue, scale: scaleValue }}
         >
-          <motion.img
+          <img
             src="/assets/glonuro-og-logo.png"
-            className="object-contain lg:w-1/2"
+            className="object-contain w-[60vw] lg:w-[40vw]"
           />
 
-          <motion.h1 className="text-center text-4xl lg:text-8xl drop-shadow-glow">
+          <h1 className="text-center text-4xl lg:text-8xl drop-shadow-glow">
             GloNeuro
-          </motion.h1>
+          </h1>
         </motion.div>
         <motion.h1
           className="text-center text-xl lg:text-3xl"
-          transition={{ delay: 3 }}
-          style={{ y: yValue }}
+          style={{ opacity: opacityValue }}
         >
           Inspiring Brains to study the Brain
         </motion.h1>
-        <motion.div className="fixed bottom-2 flex flex-col items-center">
+        <div className="flex flex-col items-center">
           <h3>Scroll down</h3>
           <motion.div
             initial={{ y: 0 }}
@@ -50,9 +46,9 @@ function PreLoader() {
           >
             <ChevronDown />
           </motion.div>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
