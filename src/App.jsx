@@ -20,6 +20,7 @@ import PostEducation from "./pages/PostEducation";
 import PostResearch from "./pages/PostResearch";
 import Protected from "./components/PrivateRoute";
 import PreLoader from "./components/Animation/PreLoader";
+import Blogs from "./pages/Blogs";
 
 function App() {
   const [width, setWidth] = useState();
@@ -36,6 +37,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path={"/"} element={<Homepage width={width} />} />
+          <Route path="/blogs/" element={<Blogs />} />
           <Route path="/blogs/:blogId" element={<ReadBlogs />} />
           <Route path="/discover" element={<Discover />} />
           <Route path="/explore" element={<Explore />} />

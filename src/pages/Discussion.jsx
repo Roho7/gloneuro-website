@@ -41,6 +41,7 @@ function Discussion() {
         <div className="flex flex-col w-1/2">
           <a href="/login">Login</a>
           {currentUser && <button onClick={handleSignOut}>Signout</button>}
+          {currentUser && <a href="/post">Post</a>}
         </div>
       </div>
     </div>

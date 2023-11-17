@@ -15,6 +15,26 @@
   @apply bg-base-800 text-base-800 min-h-screen -z-10;
 }
 
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-base-500;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-base-300;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 h1 {
   @apply text-2xl font-bold my-4;
 }

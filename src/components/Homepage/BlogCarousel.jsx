@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import BlogCard from "../Blog/BlogCard";
 import { ChevronRight } from "react-feather";
 
-function ArticleCarousel() {
+function BlogCarousel() {
   const [blogData, setBlogData] = useState([]);
   useEffect(() => {
     const getBlogs = async () => {
@@ -51,4 +51,4 @@ function ArticleCarousel() {
   );
 }
 
-export default ArticleCarousel;
+export default BlogCarousel;

@@ -1,6 +1,6 @@
 import Hero from "../components/Homepage/Hero";
 import LatestNews from "../components/Homepage/LatestNews";
-import ArticleCarousel from "../components/Homepage/ArticleCarousel";
+import ArticleCarousel from "../components/Homepage/BlogCarousel";
 import Catagories from "../components/Blog/Catagories";
 import QuoteComponent from "../components/Homepage/QuoteComponent";
 import StatsSection from "../components/Homepage/StatsSection";

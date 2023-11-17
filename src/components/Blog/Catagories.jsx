@@ -20,20 +20,22 @@ function Catagories() {
         Categories
       </h1>
       <h3 className="mb-4">Click a button to filter</h3>
-      <div className="flex gap-2 flex-wrap justify-stretch">
-        {categories.map((item, index) => {
-          return (
-            <button
-              className="p-2 border border-base-300 rounded-xl bg-base-500 hover:bg-base-300 cursor-pointer"
-              onClick={() => handleCatagoryClick(item)}
-              key={index}
-            >
-              {item}
-            </button>
-          );
-        })}
+      <div className="md:flex">
+        <div className="flex md:flex-col gap-2 md:flex-nowrap justify-stretch p-4 md:h-96 md:w-1/4 overflow-scroll">
+          {categories.map((item, index) => {
+            return (
+              <button
+                className="p-2 whitespace-nowrap border border-base-300 rounded-xl bg-base-500 hover:bg-base-300 cursor-pointer"
+                onClick={() => handleCatagoryClick(item)}
+                key={index}
+              >
+                {item}
+              </button>
+            );
+          })}
+        </div>
+        <SearchBlogs />
       </div>
-      <SearchBlogs />
     </motion.div>
   );
 }

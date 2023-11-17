@@ -18,7 +18,7 @@ const BlogCard = ({ title, img, author, id }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 100 }}
       transition={{ duration: 1 }}
-      className="p-4 bg-base-300 w-80 h-3/4 rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all ease-linear whitespace-nowrap text-ellipsis overflow-hidden"
+      className="p-4 bg-base-300 w-80 h-full rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all ease-linear whitespace-nowrap text-ellipsis overflow-hidden"
     >
       <div className="h-48 mb-4">
         <img

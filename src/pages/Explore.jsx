@@ -1,5 +1,5 @@
 import React from "react";
-import ArticleCarousel from "../components/Homepage/ArticleCarousel";
+import ArticleCarousel from "../components/Homepage/BlogCarousel";
 import LatestNews from "../components/Homepage/LatestNews";
 
 const imgs = [

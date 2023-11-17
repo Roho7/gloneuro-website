@@ -40,7 +40,7 @@ function Navbar() {
           alt=""
           className="h-10 object-contain"
         />
-        <h2>Gloneuro</h2>
+        <h2>GloNeuro</h2>
       </div>
       <div className="flex gap-4 ">
         {navbardata.Navbar.map((item, index) => {
@@ -77,14 +77,20 @@ function NavElement({ title, content }) {
       {title}
       <div
         className={
-          content != undefined ? "nav-tooltip group-hover:scale-100" : ""
+          content != undefined
+            ? "nav-tooltip group-hover:scale-100 flex flex-col"
+            : ""
         }
       >
         {content?.map((item, index) => {
           return (
-            <p className="hover:text-base-100" key={index}>
+            <a
+              className="text-base-800 hover:text-base-100"
+              key={index}
+              href={`/${item}`}
+            >
               {item}
-            </p>
+            </a>
           );
         })}
       </div>
