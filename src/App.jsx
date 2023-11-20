@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Homepage from "./pages/Homepage";
+import Homepage from "./components/Homepage/Homepage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { RecoilRoot } from "recoil";

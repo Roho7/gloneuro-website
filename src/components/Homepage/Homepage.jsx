@@ -1,11 +1,11 @@
-import Hero from "../components/Homepage/Hero";
-import LatestNews from "../components/Homepage/LatestNews";
-import ArticleCarousel from "../components/Homepage/BlogCarousel";
-import Catagories from "../components/Blog/Catagories";
-import QuoteComponent from "../components/Homepage/QuoteComponent";
-import StatsSection from "../components/Homepage/StatsSection";
+import Hero from "./Hero";
+import LatestNews from "./LatestNews";
+import ArticleCarousel from "./BlogCarousel";
+import Catagories from "../Blog/Catagories";
+import QuoteComponent from "./QuoteComponent";
+import StatsSection from "./StatsSection";
 import { motion } from "framer-motion";
-import PreLoader from "../components/Animation/PreLoader";
+import PreLoader from "../Animation/PreLoader";
 
 function Homepage(props) {
   const width = props.width;

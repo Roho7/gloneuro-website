@@ -22,9 +22,12 @@ function BlogCarousel() {
 
   return (
     <div className=" p-4 glass bg-base-800 rounded-xl">
-      <h1 className="mb-4 text-base-50 flex items-center gap-4">
-        Latest Blogs <ChevronRight />
-      </h1>
+      <span className="flex items-center">
+        <h1 className="mb-4 text-base-50 flex items-center gap-4">
+          Latest Blogs <ChevronRight />
+        </h1>
+        <a href="/blogs">See all</a>
+      </span>
       <div className="overflow-x-scroll">
         <div className="flex gap-4 min-w-max overflow-x-scroll p-4">
           {blogData

@@ -15,7 +15,10 @@ function Discover() {
         <h1 className="inner-page-hero-text">Discover</h1>
       </div>
       <div className="page-container">
-        <h1 className="text-4xl text-base-50">Discover Blogs</h1>
+        <span className="flex justify-between items-center">
+          <h1 className="text-4xl text-base-50">Discover Blogs</h1>
+          <a href="/blogs">See all blogs</a>
+        </span>
         <Catagories />
         <h1 className="my-10 text-4xl text-base-50">Discover Podcasts</h1>
       </div>
